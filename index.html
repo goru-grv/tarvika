@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#17251e">
-  <meta name="description" content="TARVIKA Research and Technology is an Indian research and education institution connecting Vedic wisdom with modern technology and applied learning.">
+  <meta name="description"
+    content="TARVIKA Research and Technology is an Indian research and education institution connecting Vedic wisdom with modern technology and applied learning.">
   <meta property="og:title" content="TARVIKA Research and Technology">
   <meta property="og:description" content="Rooted in Bharat. Built for what comes next.">
   <meta property="og:type" content="website">
   <title>TARVIKA Research and Technology | Rooted in Bharat, built for what comes next</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --forest: #17251e;
@@ -29,321 +33,1738 @@
       --sanskrit: 'Noto Serif Devanagari', serif;
       --wrap: 1200px;
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
-    body.modal-open { overflow: hidden; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { color: inherit; font: inherit; }
-    .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--leaf); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .eyebrow::before { width: 24px; height: 2px; background: var(--saffron); content: ''; }
-    .section { padding: 104px 0; }
-    .section-heading { max-width: 720px; margin: 0 auto 48px; text-align: center; }
-    .section-heading .eyebrow { justify-content: center; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { font-family: var(--display); line-height: 1.12; }
-    .section-heading h2 { margin: 17px 0 14px; font-size: clamp(2rem, 4vw, 3.35rem); letter-spacing: 0; }
-    .section-heading p { margin: 0; color: var(--muted); font-size: 1.03rem; }
-    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px; border: 1px solid transparent; border-radius: 2px; background: var(--saffron); color: #1b211b; font-weight: 700; transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease; cursor: pointer; }
-    .button:hover { transform: translateY(-2px); background: #e9aa4c; }
-    .button-quiet { border-color: rgba(255,255,255,.48); background: transparent; color: white; }
-    .button-quiet:hover { border-color: var(--saffron); background: var(--saffron); color: var(--forest); }
-    .button-dark { background: var(--forest); color: white; }
-    .button-dark:hover { background: var(--leaf); }
-    .button-arrow { font-size: 1.15em; line-height: 1; }
 
-    .site-header { position: relative; z-index: 10; background: var(--forest); color: white; border-bottom: 1px solid rgba(255,255,255,.16); }
-    .header-inner { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-    .brand { display: flex; align-items: center; gap: 13px; min-width: 260px; }
-    .brand-logo { width: 52px; height: 52px; flex: none; border-radius: 50%; object-fit: contain; background: #fff; }
-    .brand-name { display: block; max-width: 260px; font: 800 .92rem/1.3 var(--display); letter-spacing: .035em; text-transform: uppercase; }
-    .brand-caption { display: block; margin-top: 3px; color: var(--saffron-pale); font-size: .66rem; letter-spacing: .09em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 34px); }
-    .nav-links a { padding: 8px 0; color: rgba(255,255,255,.88); font-size: .88rem; font-weight: 600; }
-    .nav-links a:hover { color: var(--saffron-pale); }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown summary { padding: 8px 0; color: rgba(255,255,255,.88); font-size: .88rem; font-weight: 600; cursor: pointer; list-style: none; white-space: nowrap; }
-    .nav-dropdown summary::-webkit-details-marker { display: none; }
-    .nav-dropdown summary::after { content: '⌄'; margin-left: 6px; color: var(--saffron-pale); }
-    .dropdown-menu { position: absolute; z-index: 12; top: calc(100% + 12px); left: -16px; width: 270px; padding: 8px; background: var(--white); color: var(--ink); box-shadow: 0 16px 38px rgba(0,0,0,.22); }
-    .dropdown-menu a { display: block; padding: 10px 12px; color: var(--ink); font-size: .86rem; }
-    .dropdown-menu a:hover { background: #eeece1; color: var(--leaf); }
-    .header-cta { min-height: 42px; padding: 9px 16px; font-size: .85rem; white-space: nowrap; }
-    .menu-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.42); background: transparent; color: white; cursor: pointer; }
-    .menu-toggle svg { width: 22px; height: 22px; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-    .hero { position: relative; min-height: 720px; min-height: min(850px, 100svh); display: flex; align-items: center; overflow: hidden; color: white; background: var(--forest); }
-    .hero::before { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,26,19,.92) 0%, rgba(17,31,22,.76) 45%, rgba(17,31,22,.24) 100%), linear-gradient(0deg, rgba(14,26,19,.45), transparent 55%), url('image/herossection.png') center 48%/cover; content: ''; }
-    .hero::after { position: absolute; right: 8%; bottom: -160px; width: 420px; height: 420px; border: 1px solid rgba(240,212,163,.28); border-radius: 50%; box-shadow: 0 0 0 38px rgba(240,212,163,.035), 0 0 0 78px rgba(240,212,163,.025); content: ''; pointer-events: none; }
-    .hero-content { position: relative; z-index: 1; padding-top: 76px; }
-    .hero .eyebrow { color: var(--saffron-pale); }
-    .hero h1 { max-width: 790px; margin: 22px 0 17px; font-size: clamp(2.8rem, 7vw, 6.3rem); font-weight: 700; letter-spacing: 0; }
-    .hero h1 span { display: block; color: var(--saffron-pale); font-size: .49em; line-height: 1.35; }
-    .hero-motto { margin: 0 0 18px; color: white; font: 600 clamp(1.18rem, 2.2vw, 1.7rem)/1.7 var(--sanskrit); }
-    .hero-copy { max-width: 590px; margin-bottom: 30px; color: rgba(255,255,255,.82); font-size: 1.08rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-note { margin: 37px 0 0; color: rgba(255,255,255,.72); font-size: .8rem; letter-spacing: .05em; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
 
-    .trust-band { position: relative; z-index: 2; background: var(--forest); color: white; }
-    .trust-row { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .trust-item { min-height: 116px; display: flex; flex-direction: column; justify-content: center; padding: 20px 28px; border-right: 1px solid rgba(255,255,255,.16); }
-    .trust-item:first-child { border-left: 1px solid rgba(255,255,255,.16); }
-    .trust-item strong { color: var(--saffron-pale); font: 700 1.04rem var(--display); }
-    .trust-item span { margin-top: 6px; color: rgba(255,255,255,.7); font-size: .83rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .about { background: var(--paper); }
-    .about-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
-    .about-title { position: sticky; top: 36px; }
-    .about-title h2 { max-width: 480px; margin: 18px 0; font-size: clamp(2.3rem, 4vw, 3.6rem); }
-    .about-title p { color: var(--muted); }
-    .about-copy p { margin-bottom: 18px; color: #515a51; }
-    .about-copy .lead { color: var(--ink); font-size: 1.2rem; line-height: 1.7; }
-    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; margin-top: 28px; border-top: 1px solid var(--line); }
-    .principle { padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .principle strong { display: block; margin-bottom: 5px; font: 700 .98rem var(--display); }
-    .principle span { color: var(--muted); font-size: .88rem; }
+    body.modal-open {
+      overflow: hidden;
+    }
 
-    .purpose { background: var(--white); }
-    .purpose-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: end; margin-bottom: 58px; }
-    .purpose-heading h2 { max-width: 530px; margin: 16px 0 0; font-size: clamp(2.4rem, 4.4vw, 4rem); }
-    .purpose-heading p { max-width: 570px; margin: 0 0 5px; color: var(--muted); font-size: 1.08rem; }
-    .purpose-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-    .purpose-item { min-height: 310px; padding: 27px 30px 28px 0; }
-    .purpose-item + .purpose-item { padding-left: 30px; border-left: 1px solid var(--line); }
-    .purpose-number { display: block; margin-bottom: 28px; color: var(--leaf); font: 700 .82rem var(--display); letter-spacing: .12em; }
-    .purpose-item h3 { margin: 0 0 15px; color: var(--forest); font-size: 1.55rem; }
-    .purpose-item p { margin: 0 0 13px; color: #515a51; font-size: .95rem; }
-    .purpose-signoff { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 8px; padding: 23px 0 0; border-top: 1px solid var(--line); }
-    .purpose-signoff strong { color: var(--leaf); font: 700 1rem var(--display); }
-    .purpose-signoff span { color: var(--muted); font-size: .9rem; text-align: right; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-    .courses { background: #eeece1; }
-    .courses .section-heading { margin-bottom: 42px; }
-    .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .course-card { min-height: 242px; position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 27px; border: 1px solid rgba(23,37,30,.11); background: var(--white); text-align: left; cursor: pointer; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
-    .course-card:hover, .course-card:focus-visible { z-index: 1; transform: translateY(-4px); border-color: var(--saffron); box-shadow: 0 15px 35px rgba(31,41,33,.09); outline: none; }
-    .course-icon { width: 50px; height: 50px; display: grid; place-items: center; margin-bottom: 24px; border: 1px solid rgba(217,152,53,.6); color: var(--leaf); font: 600 1.45rem/1 var(--display); }
-    .course-card h3 { max-width: 290px; margin: 0 32px 8px 0; font-size: 1.2rem; }
-    .course-card p { max-width: 330px; margin: 0 0 20px; color: var(--muted); font-size: .9rem; }
-    .course-more { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: var(--leaf); font-size: .82rem; font-weight: 700; }
-    .course-arrow { position: absolute; top: 27px; right: 27px; color: var(--saffron); font-size: 1.2rem; }
-    .course-footnote { margin: 23px 0 0; color: var(--muted); font-size: .82rem; text-align: center; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .approach { background: var(--forest); color: white; }
-    .approach .section-heading p { color: rgba(255,255,255,.68); }
-    .approach .eyebrow { color: var(--saffron-pale); }
-    .approach-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
-    .approach-step { min-height: 200px; padding: 26px 24px 30px; border-right: 1px solid rgba(255,255,255,.2); }
-    .approach-step:first-child { border-left: 1px solid rgba(255,255,255,.2); }
-    .step-no { display: block; margin-bottom: 28px; color: var(--saffron-pale); font: 700 .8rem var(--display); letter-spacing: .12em; }
-    .approach-step h3 { margin: 0 0 10px; font-size: 1.13rem; }
-    .approach-step p { margin: 0; color: rgba(255,255,255,.69); font-size: .89rem; }
+    button {
+      color: inherit;
+      font: inherit;
+    }
 
-    .roadmap { background: #eeece1; }
-    .roadmap-track { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .roadmap-step { min-height: 225px; padding: 25px 22px 26px 0; }
-    .roadmap-step + .roadmap-step { padding-left: 22px; border-left: 1px solid var(--line); }
-    .roadmap-step span { display: block; margin-bottom: 25px; color: var(--leaf); font: 700 .78rem var(--display); letter-spacing: .1em; }
-    .roadmap-step h3 { margin: 0 0 10px; font-size: 1.08rem; }
-    .roadmap-step p { margin: 0; color: var(--muted); font-size: .88rem; }
-    .career { background: var(--white); }
-    .career-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 74px; align-items: start; }
-    .career-intro h2 { margin: 16px 0; font-size: clamp(2.2rem, 4vw, 3.3rem); }
-    .career-intro p { color: var(--muted); }
-    .career-paths { border-top: 1px solid var(--line); }
-    .career-path { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); }
-    .career-path strong { color: var(--forest); font: 700 .94rem var(--display); }
-    .career-path span { color: var(--muted); font-size: .9rem; }
-    .career-disclaimer { margin: 20px 0 0; padding-left: 15px; border-left: 2px solid var(--saffron); color: var(--muted); font-size: .84rem; }
-    .research { background: var(--forest); color: white; }
-    .research .eyebrow { color: var(--saffron-pale); }
-    .research-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 74px; align-items: start; }
-    .research h2 { margin: 16px 0; font-size: clamp(2.2rem, 4vw, 3.4rem); }
-    .research-intro { color: rgba(255,255,255,.72); }
-    .research-detail { padding: 23px 0 23px 26px; border-top: 1px solid rgba(255,255,255,.22); border-left: 2px solid var(--saffron); }
-    .research-detail h3 { margin: 0 0 10px; color: var(--saffron-pale); font-size: 1.2rem; }
-    .research-detail p { margin: 0 0 13px; color: rgba(255,255,255,.77); font-size: .93rem; }
-    .research-detail p:last-child { margin-bottom: 0; }
-    .collaborate { background: var(--paper); }
-    .collaboration-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .collaboration-item { padding: 25px 26px 27px 0; }
-    .collaboration-item + .collaboration-item { padding-left: 26px; border-left: 1px solid var(--line); }
-    .collaboration-item span { display: block; margin-bottom: 16px; color: var(--leaf); font: 700 .78rem var(--display); letter-spacing: .1em; }
-    .collaboration-item h3 { margin: 0 0 11px; font-size: 1.18rem; }
-    .collaboration-item p { margin: 0; color: var(--muted); font-size: .9rem; }
-    .collaboration-note { margin: 18px 0 0; color: var(--muted); font-size: .82rem; }
-    .collaboration-action { margin-top: 25px; }
+    .wrap {
+      width: min(var(--wrap), calc(100% - 48px));
+      margin-inline: auto;
+    }
 
-    .heritage { position: relative; overflow: hidden; background: var(--saffron-pale); }
-    .heritage-inner { max-width: 900px; margin-inline: auto; text-align: center; }
-    .heritage .eyebrow { justify-content: center; }
-    .heritage h2 { margin: 16px 0 22px; font-size: clamp(2rem, 4vw, 3.3rem); }
-    .heritage-quote { margin: 0 0 15px; color: var(--forest); font: 600 clamp(1.4rem, 3.2vw, 2.3rem)/1.8 var(--sanskrit); }
-    .heritage-translation { margin: 0 auto 20px; color: #485245; font: italic 1.12rem var(--display); }
-    .heritage-copy { max-width: 720px; margin: 0 auto; color: #485245; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--leaf);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
 
-    .contact { background: var(--paper); }
-    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
-    .contact-copy h2 { margin: 16px 0 15px; font-size: clamp(2.1rem, 4vw, 3.2rem); }
-    .contact-copy > p { max-width: 500px; color: var(--muted); }
-    .contact-list { margin-top: 29px; border-top: 1px solid var(--line); }
-    .contact-row { display: grid; grid-template-columns: 94px 1fr; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--line); }
-    .contact-row dt { color: var(--muted); font-size: .83rem; }
-    .contact-row dd { margin: 0; font-weight: 600; }
-    .contact-row a { text-decoration: underline; text-decoration-color: var(--saffron); text-underline-offset: 4px; }
-    .contact-callout { padding: 32px; background: var(--forest); color: white; }
-    .contact-callout h3 { margin: 0 0 10px; color: var(--saffron-pale); font-size: 1.5rem; }
-    .contact-callout p { color: rgba(255,255,255,.75); }
-    .contact-callout .button { margin-top: 9px; }
+    .eyebrow::before {
+      width: 24px;
+      height: 2px;
+      background: var(--saffron);
+      content: '';
+    }
 
-    .site-footer { padding: 52px 0 28px; background: #111b15; color: white; border-top: 1px solid rgba(255,255,255,.1); }
-    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.12); align-items: start; }
-    .footer-brand-block { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
-    .footer-brand-wrap { display: flex; align-items: center; justify-content: flex-start; gap: 13px; }
-    .footer-brand-wrap img { width: 44px; height: 44px; border-radius: 50%; object-fit: contain; background: white; box-shadow: 0 4px 14px rgba(0,0,0,.2); }
-    .footer-brand-wrap strong { display: block; font: 700 .92rem var(--display); color: white; letter-spacing: .02em; }
-    .footer-brand-wrap span { color: rgba(255,255,255,.65); font-size: .76rem; }
-    .footer-copy { max-width: 340px; margin: 0; color: rgba(255,255,255,.72); font-size: .88rem; line-height: 1.65; text-align: left; }
-    .footer-column { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 12px; }
-    .footer-column h4 { margin: 0 0 4px; color: var(--saffron-pale); font: 700 .8rem var(--display); letter-spacing: .12em; text-transform: uppercase; text-align: left; }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-    .footer-links a { color: rgba(255,255,255,.76); font-size: .88rem; font-weight: 500; transition: color .2s ease, transform .2s ease; }
-    .footer-links a:hover { color: var(--saffron-pale); transform: translateX(3px); }
-    .footer-contact { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-    .footer-contact a, .footer-contact span { color: rgba(255,255,255,.76); font-size: .88rem; }
-    .footer-contact a:hover { color: var(--saffron-pale); }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; }
-    .footer-motto { color: var(--saffron-pale); font: 600 .95rem var(--sanskrit); }
-    .footer-legal { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-start; }
-    .footer-legal a { color: rgba(255,255,255,.72); font-size: .84rem; transition: color .2s ease; }
-    .footer-legal a:hover { color: white; }
-    .copyright { color: rgba(255,255,255,.52); font-size: .82rem; }
+    .section {
+      padding: 104px 0;
+    }
 
-    .modal { position: fixed; z-index: 30; inset: 0; display: none; place-items: center; padding: 22px; background: rgba(9,16,12,.76); }
-    .modal.open { display: grid; }
-    .modal-panel { width: min(760px, 100%); max-height: min(90vh, 850px); overflow: auto; background: var(--paper); transform: translateY(14px); transition: transform .24s ease; }
-    .modal.open .modal-panel { transform: translateY(0); }
-    .modal-top { position: relative; padding: 31px 34px 24px; border-bottom: 1px solid var(--line); }
-    .modal-close { position: absolute; top: 17px; right: 17px; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); background: transparent; cursor: pointer; }
-    .modal-close:hover { background: var(--saffron-pale); }
-    .modal-close svg { width: 19px; height: 19px; }
-    .modal-symbol { width: 62px; height: 62px; display: grid; place-items: center; margin-bottom: 19px; border: 1px solid var(--saffron); color: var(--leaf); font: 600 1.8rem var(--display); }
-    .modal-top .eyebrow { font-size: .7rem; }
-    .modal-top h2 { max-width: 590px; margin: 9px 52px 0 0; font-size: clamp(1.7rem, 4vw, 2.35rem); }
-    .modal-content { padding: 25px 34px 34px; }
-    .modal-image { width: 100%; height: 220px; object-fit: cover; background: #d8d8cb; }
-    .modal-description { margin: 22px 0; color: #4e594f; }
-    .modal-content h3 { margin: 0 0 12px; font-size: 1.05rem; }
-    .modal-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin: 0; padding: 0; list-style: none; }
-    .modal-highlights li { position: relative; padding-left: 17px; color: #505b51; font-size: .9rem; }
-    .modal-highlights li::before { position: absolute; left: 0; color: var(--saffron); content: '◆'; font-size: .62rem; top: .36em; }
-    .modal-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 25px; }
-    .modal-actions .button { flex: 1 1 180px; }
-    .modal-note { margin: 16px 0 0; color: var(--muted); font-size: .78rem; }
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
-    .reveal.is-visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      justify-content: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--display);
+      line-height: 1.12;
+    }
+
+    .section-heading h2 {
+      margin: 17px 0 14px;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      background: var(--saffron);
+      color: #1b211b;
+      font-weight: 700;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #e9aa4c;
+    }
+
+    .button-quiet {
+      border-color: rgba(255, 255, 255, .48);
+      background: transparent;
+      color: white;
+    }
+
+    .button-quiet:hover {
+      border-color: var(--saffron);
+      background: var(--saffron);
+      color: var(--forest);
+    }
+
+    .button-dark {
+      background: var(--forest);
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: var(--leaf);
+    }
+
+    .button-arrow {
+      font-size: 1.15em;
+      line-height: 1;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 10;
+      background: var(--forest);
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .header-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 260px;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      flex: none;
+      border-radius: 50%;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .brand-name {
+      display: block;
+      max-width: 260px;
+      font: 800 .92rem/1.3 var(--display);
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    .brand-caption {
+      display: block;
+      margin-top: 3px;
+      color: var(--saffron-pale);
+      font-size: .66rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2.4vw, 34px);
+    }
+
+    .nav-links a {
+      padding: 8px 0;
+      color: rgba(255, 255, 255, .88);
+      font-size: .88rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--saffron-pale);
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown summary {
+      padding: 8px 0;
+      color: rgba(255, 255, 255, .88);
+      font-size: .88rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      white-space: nowrap;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-dropdown summary::after {
+      content: '⌄';
+      margin-left: 6px;
+      color: var(--saffron-pale);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      z-index: 12;
+      top: calc(100% + 12px);
+      left: -16px;
+      width: 270px;
+      padding: 8px;
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .22);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 12px;
+      color: var(--ink);
+      font-size: .86rem;
+    }
+
+    .dropdown-menu a:hover {
+      background: #eeece1;
+      color: var(--leaf);
+    }
+
+    .header-cta {
+      min-height: 42px;
+      padding: 9px 16px;
+      font-size: .85rem;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, .42);
+      background: transparent;
+      color: white;
+      cursor: pointer;
+    }
+
+    .menu-toggle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 720px;
+      min-height: min(850px, 100svh);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: var(--forest);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(14, 26, 19, .92) 0%, rgba(17, 31, 22, .76) 45%, rgba(17, 31, 22, .24) 100%), linear-gradient(0deg, rgba(14, 26, 19, .45), transparent 55%), url('image/herossection.png') center 48%/cover;
+      content: '';
+    }
+
+    .hero::after {
+      position: absolute;
+      right: 8%;
+      bottom: -160px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(240, 212, 163, .28);
+      border-radius: 50%;
+      box-shadow: 0 0 0 38px rgba(240, 212, 163, .035), 0 0 0 78px rgba(240, 212, 163, .025);
+      content: '';
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-top: 76px;
+    }
+
+    .hero .eyebrow {
+      color: var(--saffron-pale);
+    }
+
+    .hero h1 {
+      max-width: 790px;
+      margin: 22px 0 17px;
+      font-size: clamp(2.8rem, 7vw, 6.3rem);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--saffron-pale);
+      font-size: .49em;
+      line-height: 1.35;
+    }
+
+    .hero-motto {
+      margin: 0 0 18px;
+      color: white;
+      font: 600 clamp(1.18rem, 2.2vw, 1.7rem)/1.7 var(--sanskrit);
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin: 37px 0 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: .8rem;
+      letter-spacing: .05em;
+    }
+
+    .trust-band {
+      position: relative;
+      z-index: 2;
+      background: var(--forest);
+      color: white;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      min-height: 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 28px;
+      border-right: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .trust-item:first-child {
+      border-left: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .trust-item strong {
+      color: var(--saffron-pale);
+      font: 700 1.04rem var(--display);
+    }
+
+    .trust-item span {
+      margin-top: 6px;
+      color: rgba(255, 255, 255, .7);
+      font-size: .83rem;
+    }
+
+    .about {
+      background: var(--paper);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-title {
+      position: sticky;
+      top: 36px;
+    }
+
+    .about-title h2 {
+      max-width: 480px;
+      margin: 18px 0;
+      font-size: clamp(2.3rem, 4vw, 3.6rem);
+    }
+
+    .about-title p {
+      color: var(--muted);
+    }
+
+    .about-copy p {
+      margin-bottom: 18px;
+      color: #515a51;
+    }
+
+    .about-copy .lead {
+      color: var(--ink);
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 24px;
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .principle {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 5px;
+      font: 700 .98rem var(--display);
+    }
+
+    .principle span {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .purpose {
+      background: var(--white);
+    }
+
+    .purpose-heading {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 58px;
+    }
+
+    .purpose-heading h2 {
+      max-width: 530px;
+      margin: 16px 0 0;
+      font-size: clamp(2.4rem, 4.4vw, 4rem);
+    }
+
+    .purpose-heading p {
+      max-width: 570px;
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .purpose-item {
+      min-height: 310px;
+      padding: 27px 30px 28px 0;
+    }
+
+    .purpose-item+.purpose-item {
+      padding-left: 30px;
+      border-left: 1px solid var(--line);
+    }
+
+    .purpose-number {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--leaf);
+      font: 700 .82rem var(--display);
+      letter-spacing: .12em;
+    }
+
+    .purpose-item h3 {
+      margin: 0 0 15px;
+      color: var(--forest);
+      font-size: 1.55rem;
+    }
+
+    .purpose-item p {
+      margin: 0 0 13px;
+      color: #515a51;
+      font-size: .95rem;
+    }
+
+    .purpose-signoff {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 8px;
+      padding: 23px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .purpose-signoff strong {
+      color: var(--leaf);
+      font: 700 1rem var(--display);
+    }
+
+    .purpose-signoff span {
+      color: var(--muted);
+      font-size: .9rem;
+      text-align: right;
+    }
+
+    .courses {
+      background: #eeece1;
+    }
+
+    .courses .section-heading {
+      margin-bottom: 42px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .course-card {
+      min-height: 242px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 27px;
+      border: 1px solid rgba(23, 37, 30, .11);
+      background: var(--white);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .course-card:hover,
+    .course-card:focus-visible {
+      z-index: 1;
+      transform: translateY(-4px);
+      border-color: var(--saffron);
+      box-shadow: 0 15px 35px rgba(31, 41, 33, .09);
+      outline: none;
+    }
+
+    .course-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      border: 1px solid rgba(217, 152, 53, .6);
+      color: var(--leaf);
+      font: 600 1.45rem/1 var(--display);
+    }
+
+    .course-card h3 {
+      max-width: 290px;
+      margin: 0 32px 8px 0;
+      font-size: 1.2rem;
+    }
+
+    .course-card p {
+      max-width: 330px;
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .course-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      color: var(--leaf);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .course-arrow {
+      position: absolute;
+      top: 27px;
+      right: 27px;
+      color: var(--saffron);
+      font-size: 1.2rem;
+    }
+
+    .course-footnote {
+      margin: 23px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    .approach {
+      background: var(--forest);
+      color: white;
+    }
+
+    .approach .section-heading p {
+      color: rgba(255, 255, 255, .68);
+    }
+
+    .approach .eyebrow {
+      color: var(--saffron-pale);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .approach-step {
+      min-height: 200px;
+      padding: 26px 24px 30px;
+      border-right: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .approach-step:first-child {
+      border-left: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .step-no {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--saffron-pale);
+      font: 700 .8rem var(--display);
+      letter-spacing: .12em;
+    }
+
+    .approach-step h3 {
+      margin: 0 0 10px;
+      font-size: 1.13rem;
+    }
+
+    .approach-step p {
+      margin: 0;
+      color: rgba(255, 255, 255, .69);
+      font-size: .89rem;
+    }
+
+    .roadmap {
+      background: #eeece1;
+    }
+
+    .roadmap-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .roadmap-step {
+      min-height: 225px;
+      padding: 25px 22px 26px 0;
+    }
+
+    .roadmap-step+.roadmap-step {
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+    }
+
+    .roadmap-step span {
+      display: block;
+      margin-bottom: 25px;
+      color: var(--leaf);
+      font: 700 .78rem var(--display);
+      letter-spacing: .1em;
+    }
+
+    .roadmap-step h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .roadmap-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .career {
+      background: var(--white);
+    }
+
+    .career-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 74px;
+      align-items: start;
+    }
+
+    .career-intro h2 {
+      margin: 16px 0;
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+    }
+
+    .career-intro p {
+      color: var(--muted);
+    }
+
+    .career-paths {
+      border-top: 1px solid var(--line);
+    }
+
+    .career-path {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .career-path strong {
+      color: var(--forest);
+      font: 700 .94rem var(--display);
+    }
+
+    .career-path span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .career-disclaimer {
+      margin: 20px 0 0;
+      padding-left: 15px;
+      border-left: 2px solid var(--saffron);
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .research {
+      background: var(--forest);
+      color: white;
+    }
+
+    .research .eyebrow {
+      color: var(--saffron-pale);
+    }
+
+    .research-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 74px;
+      align-items: start;
+    }
+
+    .research h2 {
+      margin: 16px 0;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+    }
+
+    .research-intro {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .research-detail {
+      padding: 23px 0 23px 26px;
+      border-top: 1px solid rgba(255, 255, 255, .22);
+      border-left: 2px solid var(--saffron);
+    }
+
+    .research-detail h3 {
+      margin: 0 0 10px;
+      color: var(--saffron-pale);
+      font-size: 1.2rem;
+    }
+
+    .research-detail p {
+      margin: 0 0 13px;
+      color: rgba(255, 255, 255, .77);
+      font-size: .93rem;
+    }
+
+    .research-detail p:last-child {
+      margin-bottom: 0;
+    }
+
+    .collaborate {
+      background: var(--paper);
+    }
+
+    .collaboration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .collaboration-item {
+      padding: 25px 26px 27px 0;
+    }
+
+    .collaboration-item+.collaboration-item {
+      padding-left: 26px;
+      border-left: 1px solid var(--line);
+    }
+
+    .collaboration-item span {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--leaf);
+      font: 700 .78rem var(--display);
+      letter-spacing: .1em;
+    }
+
+    .collaboration-item h3 {
+      margin: 0 0 11px;
+      font-size: 1.18rem;
+    }
+
+    .collaboration-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .collaboration-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .collaboration-action {
+      margin-top: 25px;
+    }
+
+    .heritage {
+      position: relative;
+      overflow: hidden;
+      background: var(--saffron-pale);
+    }
+
+    .heritage-inner {
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .heritage .eyebrow {
+      justify-content: center;
+    }
+
+    .heritage h2 {
+      margin: 16px 0 22px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+    }
+
+    .heritage-quote {
+      margin: 0 0 15px;
+      color: var(--forest);
+      font: 600 clamp(1.4rem, 3.2vw, 2.3rem)/1.8 var(--sanskrit);
+    }
+
+    .heritage-translation {
+      margin: 0 auto 20px;
+      color: #485245;
+      font: italic 1.12rem var(--display);
+    }
+
+    .heritage-copy {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #485245;
+    }
+
+    .contact {
+      background: var(--paper);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      margin: 16px 0 15px;
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+    }
+
+    .contact-copy>p {
+      max-width: 500px;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      margin-top: 29px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 16px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row dt {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .contact-row dd {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .contact-row a {
+      text-decoration: underline;
+      text-decoration-color: var(--saffron);
+      text-underline-offset: 4px;
+    }
+
+    .contact-callout {
+      padding: 32px;
+      background: var(--forest);
+      color: white;
+    }
+
+    .contact-callout h3 {
+      margin: 0 0 10px;
+      color: var(--saffron-pale);
+      font-size: 1.5rem;
+    }
+
+    .contact-callout p {
+      color: rgba(255, 255, 255, .75);
+    }
+
+    .contact-callout .button {
+      margin-top: 9px;
+    }
+
+    .site-footer {
+      padding: 52px 0 28px;
+      background: #111b15;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
+      gap: 36px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      align-items: start;
+    }
+
+    .footer-brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .footer-brand-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 13px;
+    }
+
+    .footer-brand-wrap img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: white;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+    }
+
+    .footer-brand-wrap strong {
+      display: block;
+      font: 700 .92rem var(--display);
+      color: white;
+      letter-spacing: .02em;
+    }
+
+    .footer-brand-wrap span {
+      color: rgba(255, 255, 255, .65);
+      font-size: .76rem;
+    }
+
+    .footer-copy {
+      max-width: 340px;
+      margin: 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: .88rem;
+      line-height: 1.65;
+      text-align: left;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .footer-column h4 {
+      margin: 0 0 4px;
+      color: var(--saffron-pale);
+      font: 700 .8rem var(--display);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, .76);
+      font-size: .88rem;
+      font-weight: 500;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--saffron-pale);
+      transform: translateX(3px);
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .footer-contact a,
+    .footer-contact span {
+      color: rgba(255, 255, 255, .76);
+      font-size: .88rem;
+    }
+
+    .footer-contact a:hover {
+      color: var(--saffron-pale);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+    }
+
+    .footer-motto {
+      color: var(--saffron-pale);
+      font: 600 .95rem var(--sanskrit);
+    }
+
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .footer-legal a {
+      color: rgba(255, 255, 255, .72);
+      font-size: .84rem;
+      transition: color .2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: white;
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, .52);
+      font-size: .82rem;
+    }
+
+    .modal {
+      position: fixed;
+      z-index: 30;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 22px;
+      background: rgba(9, 16, 12, .76);
+    }
+
+    .modal.open {
+      display: grid;
+    }
+
+    .modal-panel {
+      width: min(760px, 100%);
+      max-height: min(90vh, 850px);
+      overflow: auto;
+      background: var(--paper);
+      transform: translateY(14px);
+      transition: transform .24s ease;
+    }
+
+    .modal.open .modal-panel {
+      transform: translateY(0);
+    }
+
+    .modal-top {
+      position: relative;
+      padding: 31px 34px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 17px;
+      right: 17px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      background: var(--saffron-pale);
+    }
+
+    .modal-close svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .modal-symbol {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 19px;
+      border: 1px solid var(--saffron);
+      color: var(--leaf);
+      font: 600 1.8rem var(--display);
+    }
+
+    .modal-top .eyebrow {
+      font-size: .7rem;
+    }
+
+    .modal-top h2 {
+      max-width: 590px;
+      margin: 9px 52px 0 0;
+      font-size: clamp(1.7rem, 4vw, 2.35rem);
+    }
+
+    .modal-content {
+      padding: 25px 34px 34px;
+    }
+
+    .modal-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #d8d8cb;
+    }
+
+    .modal-description {
+      margin: 22px 0;
+      color: #4e594f;
+    }
+
+    .modal-content h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .modal-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .modal-highlights li {
+      position: relative;
+      padding-left: 17px;
+      color: #505b51;
+      font-size: .9rem;
+    }
+
+    .modal-highlights li::before {
+      position: absolute;
+      left: 0;
+      color: var(--saffron);
+      content: '◆';
+      font-size: .62rem;
+      top: .36em;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 25px;
+    }
+
+    .modal-actions .button {
+      flex: 1 1 180px;
+    }
+
+    .modal-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
     @media (max-width: 1320px) {
-      .site-header { background: var(--forest); }
-      .header-inner { min-height: 72px; gap: 12px; }
-      .brand { min-width: 0; gap: 9px; }
-      .brand-logo { width: 43px; height: 43px; }
-      .brand-name { max-width: 225px; font-size: .72rem; }
-      .brand-caption { font-size: .59rem; }
-      .header-cta { display: none; }
-      .menu-toggle { display: inline-flex; flex: none; }
-      .nav-links { position: absolute; top: 71px; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 18px 18px; background: var(--forest); border-top: 1px solid rgba(255,255,255,.14); }
-      .nav-links.open { display: flex; }
-      .nav-links a, .nav-dropdown summary { padding: 12px 3px; border-bottom: 1px solid rgba(255,255,255,.12); font-size: .94rem; }
-      .dropdown-menu { position: static; width: 100%; margin-bottom: 10px; box-shadow: none; }
-      .about-layout { gap: 45px; }
-      .course-grid { grid-template-columns: repeat(2, 1fr); }
+      .site-header {
+        background: var(--forest);
+      }
+
+      .header-inner {
+        min-height: 72px;
+        gap: 12px;
+      }
+
+      .brand {
+        min-width: 0;
+        gap: 9px;
+      }
+
+      .brand-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .brand-name {
+        max-width: 225px;
+        font-size: .72rem;
+      }
+
+      .brand-caption {
+        font-size: .59rem;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex: none;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 18px 18px;
+        background: var(--forest);
+        border-top: 1px solid rgba(255, 255, 255, .14);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a,
+      .nav-dropdown summary {
+        padding: 12px 3px;
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+        font-size: .94rem;
+      }
+
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-bottom: 10px;
+        box-shadow: none;
+      }
+
+      .about-layout {
+        gap: 45px;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 720px) {
-      .wrap { width: min(var(--wrap), calc(100% - 36px)); }
-      .section { padding: 76px 0; }
-      .site-header { background: var(--forest); }
-      .header-inner { min-height: 72px; gap: 12px; }
-      .brand { min-width: 0; gap: 9px; }
-      .brand-logo { width: 43px; height: 43px; }
-      .brand-name { max-width: 225px; font-size: .72rem; }
-      .brand-caption { font-size: .59rem; }
-      .menu-toggle { display: inline-flex; flex: none; }
-      .nav-links { position: absolute; top: 71px; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 18px 18px; background: var(--forest); border-top: 1px solid rgba(255,255,255,.14); }
-      .nav-links.open { display: flex; }
-      .nav-links a, .nav-dropdown summary { padding: 12px 3px; border-bottom: 1px solid rgba(255,255,255,.12); font-size: .94rem; }
-      .hero { min-height: 700px; min-height: 92svh; }
-      .hero::before { background-position: 58% center; background-image: linear-gradient(90deg, rgba(14,26,19,.9), rgba(17,31,22,.55)), linear-gradient(0deg, rgba(14,26,19,.4), transparent 70%), url('image/herossection.png'); }
-      .hero::after { right: -240px; bottom: -190px; }
-      .hero-content { padding-top: 74px; }
-      .hero h1 { font-size: clamp(2.75rem, 12vw, 5rem); }
-      .hero-copy { font-size: 1rem; }
-      .hero-actions { align-items: stretch; flex-direction: column; max-width: 330px; }
-      .hero-actions .button { width: 100%; }
-      .hero-note { max-width: 330px; margin-top: 25px; }
-      .trust-row { grid-template-columns: 1fr 1fr; }
-      .trust-item { min-height: 100px; padding: 17px; border-bottom: 1px solid rgba(255,255,255,.16); }
-      .trust-item:nth-child(odd) { border-left: 1px solid rgba(255,255,255,.16); }
-      .trust-item:nth-child(even) { border-right: 1px solid rgba(255,255,255,.16); }
-      .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 30px; }
-      .about-title { position: static; }
-      .about-title h2 { font-size: 2.5rem; }
-      .purpose-heading { grid-template-columns: 1fr; gap: 20px; margin-bottom: 35px; }
-      .purpose-grid { grid-template-columns: 1fr; }
-      .purpose-item { min-height: 0; padding: 24px 0; }
-      .purpose-item + .purpose-item { padding-left: 0; border-top: 1px solid var(--line); border-left: 0; }
-      .purpose-signoff { align-items: flex-start; flex-direction: column; gap: 6px; }
-      .purpose-signoff span { text-align: left; }
-      .roadmap-track { grid-template-columns: 1fr 1fr; }
-      .roadmap-step { min-height: 0; padding: 22px 14px 22px 0; }
-      .roadmap-step + .roadmap-step { padding-left: 14px; }
-      .roadmap-step:last-child { grid-column: 1 / -1; padding-left: 0; border-left: 0; }
-      .career-layout, .research-layout { grid-template-columns: 1fr; gap: 30px; }
-      .career-path { grid-template-columns: 115px 1fr; gap: 14px; }
-      .collaboration-grid { grid-template-columns: 1fr; }
-      .collaboration-item { padding: 22px 0; }
-      .collaboration-item + .collaboration-item { padding-left: 0; border-top: 1px solid var(--line); border-left: 0; }
-      .principles { gap: 0 17px; }
-      .course-grid { grid-template-columns: 1fr; gap: 11px; }
-      .course-card { min-height: 213px; padding: 23px; }
-      .course-icon { margin-bottom: 19px; }
-      .approach-grid { grid-template-columns: 1fr 1fr; }
-      .approach-step { min-height: 185px; padding: 22px 16px; border-bottom: 1px solid rgba(255,255,255,.2); }
-      .approach-step:nth-child(odd) { border-left: 1px solid rgba(255,255,255,.2); }
-      .approach-step:nth-child(even) { border-right: 1px solid rgba(255,255,255,.2); }
-      .step-no { margin-bottom: 20px; }
-      .contact-callout { padding: 26px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .footer-legal { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .modal { padding: 10px; }
-      .modal-panel { max-height: 94vh; }
-      .modal-top { padding: 25px 22px 20px; }
-      .modal-close { top: 12px; right: 12px; }
-      .modal-content { padding: 20px 22px 25px; }
-      .modal-image { height: 175px; }
+      .wrap {
+        width: min(var(--wrap), calc(100% - 36px));
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .site-header {
+        background: var(--forest);
+      }
+
+      .header-inner {
+        min-height: 72px;
+        gap: 12px;
+      }
+
+      .brand {
+        min-width: 0;
+        gap: 9px;
+      }
+
+      .brand-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .brand-name {
+        max-width: 225px;
+        font-size: .72rem;
+      }
+
+      .brand-caption {
+        font-size: .59rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex: none;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 18px 18px;
+        background: var(--forest);
+        border-top: 1px solid rgba(255, 255, 255, .14);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a,
+      .nav-dropdown summary {
+        padding: 12px 3px;
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+        font-size: .94rem;
+      }
+
+      .hero {
+        min-height: 700px;
+        min-height: 92svh;
+      }
+
+      .hero::before {
+        background-position: 58% center;
+        background-image: linear-gradient(90deg, rgba(14, 26, 19, .9), rgba(17, 31, 22, .55)), linear-gradient(0deg, rgba(14, 26, 19, .4), transparent 70%), url('image/herossection.png');
+      }
+
+      .hero::after {
+        right: -240px;
+        bottom: -190px;
+      }
+
+      .hero-content {
+        padding-top: 74px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 12vw, 5rem);
+      }
+
+      .hero-copy {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 330px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-note {
+        max-width: 330px;
+        margin-top: 25px;
+      }
+
+      .trust-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-item {
+        min-height: 100px;
+        padding: 17px;
+        border-bottom: 1px solid rgba(255, 255, 255, .16);
+      }
+
+      .trust-item:nth-child(odd) {
+        border-left: 1px solid rgba(255, 255, 255, .16);
+      }
+
+      .trust-item:nth-child(even) {
+        border-right: 1px solid rgba(255, 255, 255, .16);
+      }
+
+      .about-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-title {
+        position: static;
+      }
+
+      .about-title h2 {
+        font-size: 2.5rem;
+      }
+
+      .purpose-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 35px;
+      }
+
+      .purpose-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .purpose-item {
+        min-height: 0;
+        padding: 24px 0;
+      }
+
+      .purpose-item+.purpose-item {
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .purpose-signoff {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .purpose-signoff span {
+        text-align: left;
+      }
+
+      .roadmap-track {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .roadmap-step {
+        min-height: 0;
+        padding: 22px 14px 22px 0;
+      }
+
+      .roadmap-step+.roadmap-step {
+        padding-left: 14px;
+      }
+
+      .roadmap-step:last-child {
+        grid-column: 1 / -1;
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .career-layout,
+      .research-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .career-path {
+        grid-template-columns: 115px 1fr;
+        gap: 14px;
+      }
+
+      .collaboration-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .collaboration-item {
+        padding: 22px 0;
+      }
+
+      .collaboration-item+.collaboration-item {
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .principles {
+        gap: 0 17px;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .course-card {
+        min-height: 213px;
+        padding: 23px;
+      }
+
+      .course-icon {
+        margin-bottom: 19px;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .approach-step {
+        min-height: 185px;
+        padding: 22px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+      }
+
+      .approach-step:nth-child(odd) {
+        border-left: 1px solid rgba(255, 255, 255, .2);
+      }
+
+      .approach-step:nth-child(even) {
+        border-right: 1px solid rgba(255, 255, 255, .2);
+      }
+
+      .step-no {
+        margin-bottom: 20px;
+      }
+
+      .contact-callout {
+        padding: 26px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .footer-legal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .modal {
+        padding: 10px;
+      }
+
+      .modal-panel {
+        max-height: 94vh;
+      }
+
+      .modal-top {
+        padding: 25px 22px 20px;
+      }
+
+      .modal-close {
+        top: 12px;
+        right: 12px;
+      }
+
+      .modal-content {
+        padding: 20px 22px 25px;
+      }
+
+      .modal-image {
+        height: 175px;
+      }
     }
+
     @media (max-width: 380px) {
-      .brand-name { max-width: 184px; font-size: .65rem; }
-      .brand-caption { font-size: .53rem; }
-      .principles { grid-template-columns: 1fr; }
-      .modal-highlights { grid-template-columns: 1fr; }
+      .brand-name {
+        max-width: 184px;
+        font-size: .65rem;
+      }
+
+      .brand-caption {
+        font-size: .53rem;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-highlights {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="site-header"><div class="wrap header-inner">
-  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
-  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
-    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
-    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="blog.html">Blog</a><a href="resources.html">Resources</a><a href="careers.html">Careers</a><a href="news.html">News &amp; announcements</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
-  </nav>
-  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-</div></header>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo"
+          src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and
+            Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+      <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+        <details class="nav-dropdown">
+          <summary>Programs</summary>
+          <div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp;
+              Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space
+              Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development
+              &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div>
+        </details>
+        <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a
+          href="blog.html">Blog</a><a href="resources.html">Resources</a><a href="careers.html">Careers</a><a
+          href="news.html">News &amp; announcements</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"
+        aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg></button>
+    </div>
+  </header>
 
   <main>
     <section class="hero" id="home" aria-labelledby="hero-title">
@@ -351,8 +1772,10 @@
         <span class="eyebrow">An Indian research & learning institution</span>
         <h1 id="hero-title">Rooted in Bharat.<span>Built for what comes next.</span></h1>
         <p class="hero-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</p>
-        <p class="hero-copy">Where ancient curiosity meets emerging technology. Learn by doing, explore bold ideas, and build solutions for a changing world.</p>
-        <div class="hero-actions"><a class="button" href="#programs">Explore our programs <span class="button-arrow" aria-hidden="true">↗</span></a><a class="button button-quiet" href="#about">Discover TARVIKA</a></div>
+        <p class="hero-copy">Where ancient curiosity meets emerging technology. Learn by doing, explore bold ideas, and
+          build solutions for a changing world.</p>
+        <div class="hero-actions"><a class="button" href="#programs">Explore our programs <span class="button-arrow"
+              aria-hidden="true">↗</span></a><a class="button button-quiet" href="#about">Discover TARVIKA</a></div>
         <p class="hero-note">Research. Technology. Innovation.</p>
       </div>
     </section>
@@ -361,23 +1784,39 @@
       <div class="wrap trust-row">
         <div class="trust-item"><strong>Learn with purpose</strong><span>Practice-led technology education</span></div>
         <div class="trust-item"><strong>Explore with curiosity</strong><span>Research and experimentation</span></div>
-        <div class="trust-item"><strong>Build for the real world</strong><span>Projects with practical context</span></div>
-        <div class="trust-item"><strong>Stay rooted, think globally</strong><span>Indian perspective, open inquiry</span></div>
+        <div class="trust-item"><strong>Build for the real world</strong><span>Projects with practical context</span>
+        </div>
+        <div class="trust-item"><strong>Stay rooted, think globally</strong><span>Indian perspective, open
+            inquiry</span></div>
       </div>
     </section>
 
     <section class="section about" id="about">
       <div class="wrap about-layout">
-        <div class="about-title reveal"><span class="eyebrow">About TARVIKA</span><h2>Knowledge that moves from thought to impact.</h2><p>A place for students, researchers, professionals, startups and organizations to learn, experiment and collaborate.</p></div>
+        <div class="about-title reveal"><span class="eyebrow">About TARVIKA</span>
+          <h2>Knowledge that moves from thought to impact.</h2>
+          <p>A place for students, researchers, professionals, startups and organizations to learn, experiment and
+            collaborate.</p>
+        </div>
         <div class="about-copy reveal">
-          <p class="lead"><strong>TARVIKA Research and Technology</strong> is a research, education and technology-focused institution dedicated to advancing innovation in Artificial Intelligence, Machine Learning, emerging technologies, software development and applied research.</p>
-          <p>We create opportunities to connect learning with action through technology courses, training programs, workshops, certification-oriented learning, research projects and industry-oriented programs. Learners build practical knowledge and professional capabilities by engaging with real tools, ideas and challenges.</p>
-          <p>Our work encourages students and professionals to develop projects, prototypes, experiments and research initiatives. We aim to connect academic learning with real-world applications through collaboration with educational institutions, industries, technology professionals and research communities.</p>
+          <p class="lead"><strong>TARVIKA Research and Technology</strong> is a research, education and
+            technology-focused institution dedicated to advancing innovation in Artificial Intelligence, Machine
+            Learning, emerging technologies, software development and applied research.</p>
+          <p>We create opportunities to connect learning with action through technology courses, training programs,
+            workshops, certification-oriented learning, research projects and industry-oriented programs. Learners build
+            practical knowledge and professional capabilities by engaging with real tools, ideas and challenges.</p>
+          <p>Our work encourages students and professionals to develop projects, prototypes, experiments and research
+            initiatives. We aim to connect academic learning with real-world applications through collaboration with
+            educational institutions, industries, technology professionals and research communities.</p>
           <div class="principles">
-            <div class="principle"><strong>Our vision</strong><span>A modern research and technology ecosystem where traditional knowledge, scientific thinking and emerging technologies come together.</span></div>
-            <div class="principle"><strong>Our mission</strong><span>Make quality learning, practical implementation, research culture and continuous development part of every learner's journey.</span></div>
-            <div class="principle"><strong>How we learn</strong><span>Through guided study, hands-on practice, projects, peer exchange and inquiry.</span></div>
-            <div class="principle"><strong>Who we welcome</strong><span>Learners, working professionals, organizations, researchers and collaborators.</span></div>
+            <div class="principle"><strong>Our vision</strong><span>A modern research and technology ecosystem where
+                traditional knowledge, scientific thinking and emerging technologies come together.</span></div>
+            <div class="principle"><strong>Our mission</strong><span>Make quality learning, practical implementation,
+                research culture and continuous development part of every learner's journey.</span></div>
+            <div class="principle"><strong>How we learn</strong><span>Through guided study, hands-on practice, projects,
+                peer exchange and inquiry.</span></div>
+            <div class="principle"><strong>Who we welcome</strong><span>Learners, working professionals, organizations,
+                researchers and collaborators.</span></div>
           </div>
         </div>
       </div>
@@ -386,119 +1825,278 @@
     <section class="section purpose" id="purpose" aria-labelledby="purpose-title">
       <div class="wrap">
         <div class="purpose-heading reveal">
-          <div><span class="eyebrow">Why TARVIKA exists</span><h2 id="purpose-title">A clear purpose for a changing world.</h2></div>
-          <p>Technology moves quickly, but meaningful progress takes more than tools. It needs curious minds, strong foundations, practical experience and a willingness to learn from knowledge wherever it comes from. TARVIKA brings these elements together in one learning and research community.</p>
+          <div><span class="eyebrow">Why TARVIKA exists</span>
+            <h2 id="purpose-title">A clear purpose for a changing world.</h2>
+          </div>
+          <p>Technology moves quickly, but meaningful progress takes more than tools. It needs curious minds, strong
+            foundations, practical experience and a willingness to learn from knowledge wherever it comes from. TARVIKA
+            brings these elements together in one learning and research community.</p>
         </div>
         <div class="purpose-grid reveal">
           <article class="purpose-item">
             <span class="purpose-number">01 / OUR VISION</span>
             <h3>Build an ecosystem for thoughtful innovation.</h3>
-            <p>We envision a modern research and technology ecosystem where students, researchers, professionals, startups and organizations can learn, experiment and collaborate on ideas that matter.</p>
-            <p>In that ecosystem, India's rich intellectual heritage belongs in conversation with scientific thinking and emerging technologies: not as a substitute for evidence, but as a source of curiosity, perspective and purpose.</p>
+            <p>We envision a modern research and technology ecosystem where students, researchers, professionals,
+              startups and organizations can learn, experiment and collaborate on ideas that matter.</p>
+            <p>In that ecosystem, India's rich intellectual heritage belongs in conversation with scientific thinking
+              and emerging technologies: not as a substitute for evidence, but as a source of curiosity, perspective and
+              purpose.</p>
           </article>
           <article class="purpose-item">
             <span class="purpose-number">02 / OUR MISSION</span>
             <h3>Turn learning into capability and action.</h3>
-            <p>Our mission is to make technology education practical, research-minded and connected to real challenges. We support learners through courses, workshops, guided projects, experimentation and opportunities to build professional skills.</p>
-            <p>We aim to bring educators, industry, research communities and learners closer together, while encouraging responsible practice, thoughtful collaboration and continuous development.</p>
+            <p>Our mission is to make technology education practical, research-minded and connected to real challenges.
+              We support learners through courses, workshops, guided projects, experimentation and opportunities to
+              build professional skills.</p>
+            <p>We aim to bring educators, industry, research communities and learners closer together, while encouraging
+              responsible practice, thoughtful collaboration and continuous development.</p>
           </article>
           <article class="purpose-item">
             <span class="purpose-number">03 / WHY WE STARTED</span>
             <h3>Because potential deserves a place to grow.</h3>
-            <p>New fields such as AI, cybersecurity, space technology and digital agriculture are reshaping how we solve problems. Yet knowing about a technology and knowing how to apply it are not the same thing.</p>
-            <p>TARVIKA was created to help close that distance: a place to ask better questions, gain hands-on experience, test ideas and connect knowledge with useful work, while staying open to insight from every direction.</p>
+            <p>New fields such as AI, cybersecurity, space technology and digital agriculture are reshaping how we solve
+              problems. Yet knowing about a technology and knowing how to apply it are not the same thing.</p>
+            <p>TARVIKA was created to help close that distance: a place to ask better questions, gain hands-on
+              experience, test ideas and connect knowledge with useful work, while staying open to insight from every
+              direction.</p>
           </article>
         </div>
-        <div class="purpose-signoff reveal"><strong>Research. Technology. Innovation.</strong><span>Rooted in Bharat. Open to the world. Focused on what we can build together.</span></div>
+        <div class="purpose-signoff reveal"><strong>Research. Technology. Innovation.</strong><span>Rooted in Bharat.
+            Open to the world. Focused on what we can build together.</span></div>
       </div>
     </section>
 
     <section class="section courses" id="programs">
       <div class="wrap">
-        <div class="section-heading reveal"><span class="eyebrow">Explore and build</span><h2>Programs for a changing world</h2><p>Explore emerging disciplines through practical, technology-focused learning. Select a program to see its overview and learning areas.</p></div>
-        <div class="course-grid">
-          <button class="course-card reveal" type="button" data-course="digital-marketing" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">↗</span><span class="course-arrow" aria-hidden="true">+</span><h3>Digital Marketing</h3><p>Explore how brands reach, serve and grow digital audiences.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
-          <button class="course-card reveal" type="button" data-course="ai-ml" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">⌘</span><span class="course-arrow" aria-hidden="true">+</span><h3>Artificial Intelligence &amp; Machine Learning</h3><p>Study intelligent systems, data, models and responsible AI.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
-          <button class="course-card reveal" type="button" data-course="agri-tech" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">⌁</span><span class="course-arrow" aria-hidden="true">+</span><h3>Agri Tech</h3><p>Connect agriculture with sensors, analytics and digital tools.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
-          <button class="course-card reveal" type="button" data-course="space-tech" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">✦</span><span class="course-arrow" aria-hidden="true">+</span><h3>Space Technology</h3><p>Explore the technologies and systems behind space applications.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
-          <button class="course-card reveal" type="button" data-course="cyber-security" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">◈</span><span class="course-arrow" aria-hidden="true">+</span><h3>Cyber Security</h3><p>Build foundations in protecting systems, networks and data.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
-          <button class="course-card reveal" type="button" data-course="web-devops" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">&lt;/&gt;</span><span class="course-arrow" aria-hidden="true">+</span><h3>Web Development &amp; DevOps</h3><p>Create web experiences and understand modern delivery workflows.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
-          <button class="course-card reveal" type="button" data-course="digital-forensics" aria-haspopup="dialog"><span class="course-icon" aria-hidden="true">⌬</span><span class="course-arrow" aria-hidden="true">+</span><h3>Digital Forensics</h3><p>Learn how digital evidence is identified, preserved and examined.</p><span class="course-more">Discover this program <span aria-hidden="true">→</span></span></button>
+        <div class="section-heading reveal"><span class="eyebrow">Explore and build</span>
+          <h2>Programs for a changing world</h2>
+          <p>Explore emerging disciplines through practical, technology-focused learning. Select a program to see its
+            overview and learning areas.</p>
         </div>
-        <p class="course-footnote">Program structure, prerequisites, duration and fees are shared by the TARVIKA team. Contact us for current details.</p>
+        <div class="course-grid">
+          <button class="course-card reveal" type="button" data-course="digital-marketing" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">↗</span><span class="course-arrow" aria-hidden="true">+</span>
+            <h3>Digital Marketing</h3>
+            <p>Explore how brands reach, serve and grow digital audiences.</p><span class="course-more">Discover this
+              program <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="course-card reveal" type="button" data-course="ai-ml" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">⌘</span><span class="course-arrow" aria-hidden="true">+</span>
+            <h3>Artificial Intelligence &amp; Machine Learning</h3>
+            <p>Study intelligent systems, data, models and responsible AI.</p><span class="course-more">Discover this
+              program <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="course-card reveal" type="button" data-course="agri-tech" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">⌁</span><span class="course-arrow" aria-hidden="true">+</span>
+            <h3>Agri Tech</h3>
+            <p>Connect agriculture with sensors, analytics and digital tools.</p><span class="course-more">Discover this
+              program <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="course-card reveal" type="button" data-course="space-tech" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">✦</span><span class="course-arrow" aria-hidden="true">+</span>
+            <h3>Space Technology</h3>
+            <p>Explore the technologies and systems behind space applications.</p><span class="course-more">Discover
+              this program <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="course-card reveal" type="button" data-course="cyber-security" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">◈</span><span class="course-arrow" aria-hidden="true">+</span>
+            <h3>Cyber Security</h3>
+            <p>Build foundations in protecting systems, networks and data.</p><span class="course-more">Discover this
+              program <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="course-card reveal" type="button" data-course="web-devops" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">&lt;/&gt;</span><span class="course-arrow"
+              aria-hidden="true">+</span>
+            <h3>Web Development &amp; DevOps</h3>
+            <p>Create web experiences and understand modern delivery workflows.</p><span class="course-more">Discover
+              this program <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="course-card reveal" type="button" data-course="digital-forensics" aria-haspopup="dialog"><span
+              class="course-icon" aria-hidden="true">⌬</span><span class="course-arrow" aria-hidden="true">+</span>
+            <h3>Digital Forensics</h3>
+            <p>Learn how digital evidence is identified, preserved and examined.</p><span class="course-more">Discover
+              this program <span aria-hidden="true">→</span></span>
+          </button>
+        </div>
+        <p class="course-footnote">Program structure, prerequisites, duration and fees are shared by the TARVIKA team.
+          Contact us for current details.</p>
       </div>
     </section>
 
     <section class="section approach" id="approach">
       <div class="wrap">
-        <div class="section-heading reveal"><span class="eyebrow">Learning by exploration</span><h2>From a good question to a working idea.</h2><p>We bring learning, experimentation and collaboration together so technology has a practical purpose.</p></div>
+        <div class="section-heading reveal"><span class="eyebrow">Learning by exploration</span>
+          <h2>From a good question to a working idea.</h2>
+          <p>We bring learning, experimentation and collaboration together so technology has a practical purpose.</p>
+        </div>
         <div class="approach-grid reveal">
-          <article class="approach-step"><span class="step-no">01 / LEARN</span><h3>Build your foundations</h3><p>Understand core concepts, tools and the language of your chosen field.</p></article>
-          <article class="approach-step"><span class="step-no">02 / EXPERIMENT</span><h3>Try, test, refine</h3><p>Use practical exercises to turn ideas into working knowledge.</p></article>
-          <article class="approach-step"><span class="step-no">03 / COLLABORATE</span><h3>Make ideas stronger</h3><p>Exchange perspectives with peers, mentors and collaborators.</p></article>
-          <article class="approach-step"><span class="step-no">04 / APPLY</span><h3>Create real-world value</h3><p>Explore how research and technology can respond to real challenges.</p></article>
+          <article class="approach-step"><span class="step-no">01 / LEARN</span>
+            <h3>Build your foundations</h3>
+            <p>Understand core concepts, tools and the language of your chosen field.</p>
+          </article>
+          <article class="approach-step"><span class="step-no">02 / EXPERIMENT</span>
+            <h3>Try, test, refine</h3>
+            <p>Use practical exercises to turn ideas into working knowledge.</p>
+          </article>
+          <article class="approach-step"><span class="step-no">03 / COLLABORATE</span>
+            <h3>Make ideas stronger</h3>
+            <p>Exchange perspectives with peers, mentors and collaborators.</p>
+          </article>
+          <article class="approach-step"><span class="step-no">04 / APPLY</span>
+            <h3>Create real-world value</h3>
+            <p>Explore how research and technology can respond to real challenges.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section roadmap" id="roadmap" aria-labelledby="roadmap-title">
       <div class="wrap">
-        <div class="section-heading reveal"><span class="eyebrow">A practical learner roadmap</span><h2 id="roadmap-title">Move from curiosity to credible work.</h2><p>A flexible path for turning a subject you care about into skills, project evidence and a clearer next step. The pace and activities depend on each program.</p></div>
+        <div class="section-heading reveal"><span class="eyebrow">A practical learner roadmap</span>
+          <h2 id="roadmap-title">Move from curiosity to credible work.</h2>
+          <p>A flexible path for turning a subject you care about into skills, project evidence and a clearer next step.
+            The pace and activities depend on each program.</p>
+        </div>
         <div class="roadmap-track reveal">
-          <article class="roadmap-step"><span>01 / DISCOVER</span><h3>Choose a direction</h3><p>Explore a field, identify the problems it addresses and set a realistic learning goal.</p></article>
-          <article class="roadmap-step"><span>02 / LEARN</span><h3>Build foundations</h3><p>Study core ideas, tools and methods with guidance suited to the program.</p></article>
-          <article class="roadmap-step"><span>03 / PRACTISE</span><h3>Apply what you learn</h3><p>Work through exercises, experiments or a project brief grounded in real use cases.</p></article>
-          <article class="roadmap-step"><span>04 / SHOW YOUR WORK</span><h3>Reflect and document</h3><p>Record your process, decisions and results in a portfolio or project presentation.</p></article>
-          <article class="roadmap-step"><span>05 / PLAN AHEAD</span><h3>Choose your next step</h3><p>Use feedback and your interests to identify further learning, research or career options.</p></article>
+          <article class="roadmap-step"><span>01 / DISCOVER</span>
+            <h3>Choose a direction</h3>
+            <p>Explore a field, identify the problems it addresses and set a realistic learning goal.</p>
+          </article>
+          <article class="roadmap-step"><span>02 / LEARN</span>
+            <h3>Build foundations</h3>
+            <p>Study core ideas, tools and methods with guidance suited to the program.</p>
+          </article>
+          <article class="roadmap-step"><span>03 / PRACTISE</span>
+            <h3>Apply what you learn</h3>
+            <p>Work through exercises, experiments or a project brief grounded in real use cases.</p>
+          </article>
+          <article class="roadmap-step"><span>04 / SHOW YOUR WORK</span>
+            <h3>Reflect and document</h3>
+            <p>Record your process, decisions and results in a portfolio or project presentation.</p>
+          </article>
+          <article class="roadmap-step"><span>05 / PLAN AHEAD</span>
+            <h3>Choose your next step</h3>
+            <p>Use feedback and your interests to identify further learning, research or career options.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section career" id="career" aria-labelledby="career-title">
       <div class="wrap career-layout">
-        <div class="career-intro reveal"><span class="eyebrow">Career growth</span><h2 id="career-title">Build capability you can show.</h2><p>Career growth is more than completing a course. TARVIKA's learning approach is designed to help participants strengthen practical skills, communicate their work and make informed decisions about what to learn next.</p></div>
+        <div class="career-intro reveal"><span class="eyebrow">Career growth</span>
+          <h2 id="career-title">Build capability you can show.</h2>
+          <p>Career growth is more than completing a course. TARVIKA's learning approach is designed to help
+            participants strengthen practical skills, communicate their work and make informed decisions about what to
+            learn next.</p>
+        </div>
         <div class="reveal">
           <div class="career-paths">
-            <div class="career-path"><strong>Skills</strong><span>Develop field-specific foundations through guided learning and practice.</span></div>
-            <div class="career-path"><strong>Project evidence</strong><span>Build examples that help you explain your process, contribution and learning.</span></div>
-            <div class="career-path"><strong>Professional readiness</strong><span>Practise presenting ideas, collaborating and discussing technical work.</span></div>
-            <div class="career-path"><strong>Next opportunities</strong><span>Explore further study, research, internships or roles that fit your preparation.</span></div>
+            <div class="career-path"><strong>Skills</strong><span>Develop field-specific foundations through guided
+                learning and practice.</span></div>
+            <div class="career-path"><strong>Project evidence</strong><span>Build examples that help you explain your
+                process, contribution and learning.</span></div>
+            <div class="career-path"><strong>Professional readiness</strong><span>Practise presenting ideas,
+                collaborating and discussing technical work.</span></div>
+            <div class="career-path"><strong>Next opportunities</strong><span>Explore further study, research,
+                internships or roles that fit your preparation.</span></div>
           </div>
-          <p class="career-disclaimer">Programs can support career development, but do not guarantee a job, internship, salary or placement. Availability of mentoring, project reviews and other support is shared for each specific program.</p>
+          <p class="career-disclaimer">Programs can support career development, but do not guarantee a job, internship,
+            salary or placement. Availability of mentoring, project reviews and other support is shared for each
+            specific program.</p>
         </div>
       </div>
     </section>
 
     <section class="section research" id="research" aria-labelledby="research-title">
       <div class="wrap research-layout">
-        <div class="reveal"><span class="eyebrow">Research-led learning</span><h2 id="research-title">Explore questions. Test ideas. Share what you learn.</h2><p class="research-intro">TARVIKA's focus is technology learning, applied research and collaboration. Participants can engage with projects, prototypes, experiments and workshops according to the scope of each offering.</p></div>
-        <div class="research-detail reveal"><h3>Clear about what we offer</h3><p>TARVIKA is a research, education and technology institution. Its programs are courses, training, workshops and research-oriented learning initiatives. TARVIKA does not award university degrees.</p><p>Where a particular program includes a certificate or an academic collaboration, its issuing organization, recognition, eligibility and terms should be stated clearly before enrolment. A certificate of participation or course completion is not the same as a university degree.</p></div>
+        <div class="reveal"><span class="eyebrow">Research-led learning</span>
+          <h2 id="research-title">Explore questions. Test ideas. Share what you learn.</h2>
+          <p class="research-intro">TARVIKA's focus is technology learning, applied research and collaboration.
+            Participants can engage with projects, prototypes, experiments and workshops according to the scope of each
+            offering.</p>
+        </div>
+        <div class="research-detail reveal">
+          <h3>Clear about what we offer</h3>
+          <p>TARVIKA is a research, education and technology institution. Its programs are courses, training, workshops
+            and research-oriented learning initiatives. TARVIKA does not award university degrees.</p>
+          <p>Where a particular program includes a certificate or an academic collaboration, its issuing organization,
+            recognition, eligibility and terms should be stated clearly before enrolment. A certificate of participation
+            or course completion is not the same as a university degree.</p>
+        </div>
       </div>
     </section>
 
     <section class="section collaborate" id="collaborate" aria-labelledby="collaborate-title">
       <div class="wrap">
-        <div class="section-heading reveal"><span class="eyebrow">Working together</span><h2 id="collaborate-title">Good research grows through exchange.</h2><p>TARVIKA welcomes conversations with institutions and people who want to turn shared questions into thoughtful learning, research and practical work.</p></div>
-        <div class="collaboration-grid reveal">
-          <article class="collaboration-item"><span>01 / UNIVERSITY &amp; ACADEMIC</span><h3>Connect learning and research</h3><p>Potential work may include guest sessions, joint workshops, student projects, research discussions and knowledge exchange with universities and academic communities, subject to agreement and scope.</p></article>
-          <article class="collaboration-item"><span>02 / INDUSTRY &amp; COMMUNITY</span><h3>Bring real challenges into view</h3><p>Organizations and practitioners can help frame project briefs, share domain insight, offer mentoring or explore responsible technology pilots where there is a mutual fit.</p></article>
-          <article class="collaboration-item"><span>03 / INTERNATIONAL EXCHANGE</span><h3>Learn across borders</h3><p>TARVIKA aims to build international academic and research connections through dialogue, virtual exchange, collaborative events and joint exploration when suitable partners and agreements are in place.</p></article>
+        <div class="section-heading reveal"><span class="eyebrow">Working together</span>
+          <h2 id="collaborate-title">Good research grows through exchange.</h2>
+          <p>TARVIKA welcomes conversations with institutions and people who want to turn shared questions into
+            thoughtful learning, research and practical work.</p>
         </div>
-        <p class="collaboration-note">Collaboration formats are possibilities, not a claim of an existing partnership. Any confirmed partner, activity, selection process or outcome will be identified transparently.</p>
-        <div class="collaboration-action reveal"><a class="button button-dark" href="mailto:info@tarvikart.com?subject=TARVIKA%20collaboration%20enquiry">Discuss a collaboration <span class="button-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="collaboration-grid reveal">
+          <article class="collaboration-item"><span>01 / UNIVERSITY &amp; ACADEMIC</span>
+            <h3>Connect learning and research</h3>
+            <p>Potential work may include guest sessions, joint workshops, student projects, research discussions and
+              knowledge exchange with universities and academic communities, subject to agreement and scope.</p>
+          </article>
+          <article class="collaboration-item"><span>02 / INDUSTRY &amp; COMMUNITY</span>
+            <h3>Bring real challenges into view</h3>
+            <p>Organizations and practitioners can help frame project briefs, share domain insight, offer mentoring or
+              explore responsible technology pilots where there is a mutual fit.</p>
+          </article>
+          <article class="collaboration-item"><span>03 / INTERNATIONAL EXCHANGE</span>
+            <h3>Learn across borders</h3>
+            <p>TARVIKA aims to build international academic and research connections through dialogue, virtual exchange,
+              collaborative events and joint exploration when suitable partners and agreements are in place.</p>
+          </article>
+        </div>
+        <p class="collaboration-note">Collaboration formats are possibilities, not a claim of an existing partnership.
+          Any confirmed partner, activity, selection process or outcome will be identified transparently.</p>
+        <div class="collaboration-action reveal"><a class="button button-dark"
+            href="mailto:info@tarvikart.com?subject=TARVIKA%20collaboration%20enquiry">Discuss a collaboration <span
+              class="button-arrow" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
     <section class="section heritage" id="heritage">
-      <div class="wrap heritage-inner reveal"><span class="eyebrow">A timeless invitation to inquiry</span><h2>Wisdom from every direction.</h2><blockquote class="heritage-quote" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</blockquote><p class="heritage-translation">“Let noble thoughts come to us from every side.”</p><p class="heritage-copy">This Vedic ideal reflects an openness to knowledge, thoughtful inquiry and learning across perspectives. At TARVIKA, Indian intellectual heritage sits alongside modern science and technology: grounded in our roots, and curious about what lies ahead.</p></div>
+      <div class="wrap heritage-inner reveal"><span class="eyebrow">A timeless invitation to inquiry</span>
+        <h2>Wisdom from every direction.</h2>
+        <blockquote class="heritage-quote" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</blockquote>
+        <p class="heritage-translation">“Let noble thoughts come to us from every side.”</p>
+        <p class="heritage-copy">This Vedic ideal reflects an openness to knowledge, thoughtful inquiry and learning
+          across perspectives. At TARVIKA, Indian intellectual heritage sits alongside modern science and technology:
+          grounded in our roots, and curious about what lies ahead.</p>
+      </div>
     </section>
 
     <section class="section contact" id="contact">
       <div class="wrap contact-layout">
-        <div class="contact-copy reveal"><span class="eyebrow">Start a conversation</span><h2>Bring your curiosity to TARVIKA.</h2><p>Ask about a program, training, a research idea or a possible collaboration. Our team can share current information and help you find the right next step.</p>
-          <dl class="contact-list"><div class="contact-row"><dt>Address</dt><dd>207, Fortune 80, University Road,<br>Udaipur, Rajasthan 323001</dd></div><div class="contact-row"><dt>Email</dt><dd><a href="mailto:info@tarvikart.com">info@tarvikart.com</a></dd></div><div class="contact-row"><dt>Institution</dt><dd>TARVIKA Research and Technology</dd></div></dl>
+        <div class="contact-copy reveal"><span class="eyebrow">Start a conversation</span>
+          <h2>Bring your curiosity to TARVIKA.</h2>
+          <p>Ask about a program, training, a research idea or a possible collaboration. Our team can share current
+            information and help you find the right next step.</p>
+          <dl class="contact-list">
+            <div class="contact-row">
+              <dt>Address</dt>
+              <dd>207, Fortune 80, University Road,<br>Udaipur, Rajasthan 323001</dd>
+            </div>
+            <div class="contact-row">
+              <dt>Email</dt>
+              <dd><a href="mailto:info@tarvikart.com">info@tarvikart.com</a></dd>
+            </div>
+            <div class="contact-row">
+              <dt>Institution</dt>
+              <dd>TARVIKA Research and Technology</dd>
+            </div>
+          </dl>
         </div>
-        <aside class="contact-callout reveal"><h3>Want to know more?</h3><p>Reach out for program details, eligibility, fees, upcoming batches and collaboration enquiries.</p><a class="button" href="mailto:info@tarvikart.com?subject=TARVIKA%20program%20enquiry">Email the TARVIKA team <span class="button-arrow" aria-hidden="true">↗</span></a></aside>
+        <aside class="contact-callout reveal">
+          <h3>Want to know more?</h3>
+          <p>Reach out for program details, eligibility, fees, upcoming batches and collaboration enquiries.</p><a
+            class="button" href="mailto:info@tarvikart.com?subject=TARVIKA%20program%20enquiry">Email the TARVIKA team
+            <span class="button-arrow" aria-hidden="true">↗</span></a>
+        </aside>
       </div>
     </section>
   </main>
@@ -510,7 +2108,8 @@
           <img src="image/logo.png" alt="TARVIKA logo">
           <span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span>
         </div>
-        <p class="footer-copy">Rooted in Bharat, built for what comes next. TARVIKA brings together research, learning, mentorship and technology-led innovation for emerging futures.</p>
+        <p class="footer-copy">Rooted in Bharat, built for what comes next. TARVIKA brings together research, learning,
+          mentorship and technology-led innovation for emerging futures.</p>
       </div>
 
       <div class="footer-column">
@@ -519,6 +2118,12 @@
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="programs.html">Programs</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="careers.html">Careers</a>
+          <a href="news.html">News &amp; announcements</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
           <a href="research-collaboration.html">Research collaboration</a>
         </nav>
       </div>
@@ -554,8 +2159,24 @@
 
   <div class="modal" id="course-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-panel" role="document">
-      <div class="modal-top"><button class="modal-close" type="button" aria-label="Close program details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><div class="modal-symbol" id="modal-symbol" aria-hidden="true"></div><span class="eyebrow">TARVIKA learning program</span><h2 id="modal-title"></h2></div>
-      <div class="modal-content"><img class="modal-image" id="modal-image" src="" alt=""><p class="modal-description" id="modal-description"></p><h3>What you can explore</h3><ul class="modal-highlights" id="modal-highlights"></ul><div class="modal-actions"><a class="button button-dark" id="more-link" href="mailto:info@tarvikart.com">Know more <span class="button-arrow" aria-hidden="true">↗</span></a><a class="button" id="fees-link" href="mailto:info@tarvikart.com">Know about fees <span class="button-arrow" aria-hidden="true">↗</span></a></div><p class="modal-note">Ask our team for current course format, duration, eligibility and fee details.</p></div>
+      <div class="modal-top"><button class="modal-close" type="button" aria-label="Close program details"><svg
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg></button>
+        <div class="modal-symbol" id="modal-symbol" aria-hidden="true"></div><span class="eyebrow">TARVIKA learning
+          program</span>
+        <h2 id="modal-title"></h2>
+      </div>
+      <div class="modal-content"><img class="modal-image" id="modal-image" src="" alt="">
+        <p class="modal-description" id="modal-description"></p>
+        <h3>What you can explore</h3>
+        <ul class="modal-highlights" id="modal-highlights"></ul>
+        <div class="modal-actions"><a class="button button-dark" id="more-link" href="mailto:info@tarvikart.com">Know
+            more <span class="button-arrow" aria-hidden="true">↗</span></a><a class="button" id="fees-link"
+            href="mailto:info@tarvikart.com">Know about fees <span class="button-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="modal-note">Ask our team for current course format, duration, eligibility and fee details.</p>
+      </div>
     </div>
   </div>
 
@@ -655,4 +2276,5 @@
     }
   </script>
 </body>
+
 </html>

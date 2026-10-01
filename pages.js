@@ -15,3 +15,8 @@ if (menuToggle && primaryNav) {
     menuToggle.setAttribute('aria-label', 'Open navigation');
   }));
 }
+
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
