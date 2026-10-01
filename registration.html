@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251e">
+  <meta name="description" content="Register your interest in a TARVIKA Research and Technology learning program.">
+  <title>Student Registration | TARVIKA Research and Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    .registration-hero { padding: 48px 0 52px; }
+    .registration-hero h1 { max-width: 760px; font-size: clamp(2.2rem, 4.5vw, 3.7rem); }
+    .registration-hero .hero-row { display: flex; align-items: center; justify-content: space-between; gap: 36px; }
+    .registration-motto { flex: none; color: var(--saffron-pale); font: 1.2rem/1.9 var(--sanskrit); text-align: right; }
+    .registration-wrap { width: min(1000px, calc(100% - 48px)); margin: 0 auto; }
+    .registration-section { padding: 56px 0 82px; }
+    .form-intro { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .form-intro h2 { margin: 9px 0 5px; font-size: 1.75rem; }
+    .form-intro p { max-width: 520px; margin: 0; color: var(--muted); font-size: .92rem; }
+    .required-note { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+    .account-switch { display: inline-flex; gap: 4px; margin-bottom: 26px; padding: 4px; border: 1px solid var(--line); background: #eeece1; }
+    .account-switch button { min-height: 42px; padding: 9px 16px; border: 0; background: transparent; color: var(--muted); font: 700 .86rem var(--sans); cursor: pointer; }
+    .account-switch button[aria-selected="true"] { background: var(--forest); color: white; }
+    .account-panel { padding: 32px; border: 1px solid var(--line); background: var(--white); }
+    .account-panel h2 { margin: 0 0 8px; font-size: 1.6rem; }
+    .account-panel > p { color: var(--muted); font-size: .92rem; }
+    .account-form { max-width: 620px; }
+    .account-form .button { margin: 0; border: 0; cursor: pointer; }
+    .account-form .button:disabled { opacity: .65; cursor: wait; }
+    .profile-panel { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .profile-panel h3 { margin: 0 0 6px; font-size: 1.2rem; }
+    .profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin: 18px 0 24px; border-top: 1px solid var(--line); }
+    .profile-row { padding: 13px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+    .profile-row dt { color: var(--muted); font-size: .78rem; }
+    .profile-row dd { margin: 4px 0 0; color: var(--ink); font-weight: 600; }
+    .registration-form { padding: 32px; border: 1px solid var(--line); background: var(--white); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px 24px; }
+    .form-field { min-width: 0; }
+    .form-field-wide { grid-column: 1 / -1; }
+    .form-field label, .field-label { display: block; margin-bottom: 7px; color: var(--ink); font-size: .88rem; font-weight: 700; }
+    .form-field label span { color: #9a542f; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid rgba(32,39,32,.23); border-radius: 2px; background: #fffefa; color: var(--ink); font: inherit; font-size: .94rem; }
+    .form-field textarea { min-height: 100px; resize: vertical; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: 2px solid var(--leaf); outline-offset: 2px; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #858b83; }
+    .field-hint { display: block; margin-top: 6px; color: var(--muted); font-size: .78rem; }
+    .form-divider { grid-column: 1 / -1; margin: 6px 0 0; padding-top: 21px; border-top: 1px solid var(--line); }
+    .form-divider h3 { margin: 0 0 5px; font-size: 1.12rem; }
+    .form-divider p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .consent-row { grid-column: 1 / -1; display: flex; align-items: flex-start; gap: 11px; margin-top: 5px; color: #505b51; font-size: .84rem; }
+    .consent-row input { width: 18px; height: 18px; flex: none; margin: 2px 0 0; accent-color: var(--leaf); }
+    .form-submit-row { grid-column: 1 / -1; display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 2px; }
+    .form-submit-row .button { min-width: 190px; margin: 0; border: 0; cursor: pointer; }
+    .form-submit-row .button:disabled { opacity: .65; cursor: wait; }
+    .form-status { min-height: 24px; margin: 0; color: var(--muted); font-size: .88rem; }
+    .form-status.is-error { color: #9d2f28; }
+    .registration-notice { margin-top: 22px; padding: 16px 19px; border-left: 3px solid var(--saffron); background: #eeece1; color: #4c564d; font-size: .84rem; }
+    .registration-success { width: min(760px, calc(100% - 48px)); margin: 58px auto 82px; padding: 38px; border-top: 4px solid var(--leaf); background: var(--white); }
+    .registration-success h2 { margin: 13px 0 9px; font-size: 2rem; }
+    .registration-success > p { color: var(--muted); }
+    .student-id-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 24px 0; padding: 18px 20px; border: 1px dashed var(--leaf); background: #f0f2e9; }
+    .student-id-box span { display: block; color: var(--muted); font-size: .78rem; }
+    .student-id-box strong { display: block; margin-top: 4px; color: var(--forest); font: 800 1.25rem var(--display); letter-spacing: .04em; overflow-wrap: anywhere; }
+    .success-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .success-actions .button { margin: 0; cursor: pointer; }
+    .success-warning { margin: 19px 0 0; color: var(--muted); font-size: .82rem; }
+    [hidden] { display: none !important; }
+    @media (max-width: 720px) {
+      .registration-hero { padding: 42px 0; }
+      .registration-hero .hero-row { align-items: flex-start; flex-direction: column; gap: 18px; }
+      .registration-motto { text-align: left; font-size: 1.05rem; }
+      .registration-wrap, .registration-success { width: calc(100% - 36px); }
+      .registration-section { padding: 42px 0 60px; }
+      .form-intro { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .registration-form { padding: 22px 18px; }
+      .account-panel { padding: 22px 18px; }
+      .account-switch { display: grid; width: 100%; grid-template-columns: 1fr 1fr; }
+      .account-switch button { padding-inline: 8px; }
+      .form-grid { grid-template-columns: 1fr; gap: 18px; }
+      .form-field-wide, .form-divider, .consent-row, .form-submit-row { grid-column: auto; }
+      .form-submit-row { align-items: stretch; flex-direction: column; }
+      .form-submit-row .button { width: 100%; }
+      .registration-success { margin: 38px auto 60px; padding: 27px 21px; }
+      .student-id-box { align-items: flex-start; flex-direction: column; }
+      .profile-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+
+  <main>
+    <section class="page-hero registration-hero">
+      <div class="wrap hero-row">
+        <div><span class="eyebrow">Student registration</span><h1>Take your next step with TARVIKA.</h1><p>Share your details and the program you are interested in. The team can follow up with current course information and next steps.</p></div>
+        <p class="registration-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</p>
+      </div>
+    </section>
+
+    <section class="registration-section" id="registration-section">
+      <div class="registration-wrap">
+        <div class="account-switch" role="tablist" aria-label="Student account options">
+          <button type="button" id="register-tab" role="tab" aria-selected="true" aria-controls="register-panel">New registration</button>
+          <button type="button" id="login-tab" role="tab" aria-selected="false" aria-controls="login-panel">Existing student login</button>
+        </div>
+        <div id="register-panel" role="tabpanel" aria-labelledby="register-tab">
+        <div class="form-intro"><div><span class="eyebrow">Registration form</span><h2>Student details</h2><p>Enter accurate contact and education details so we can respond to your registration.</p></div><span class="required-note"><span aria-hidden="true">*</span> Required fields</span></div>
+        <form class="registration-form" id="registration-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field"><label for="student-name">Student full name <span>*</span></label><input id="student-name" name="studentName" autocomplete="name" maxlength="100" required placeholder="Name as you use it officially"></div>
+            <div class="form-field"><label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></div>
+            <div class="form-field"><label for="account-password">Create password <span>*</span></label><input id="account-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required placeholder="At least 8 characters"><span class="field-hint">Use this with your email to view your details later.</span></div>
+            <div class="form-field"><label for="confirm-password">Confirm password <span>*</span></label><input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required placeholder="Enter the same password again"></div>
+            <div class="form-field"><label for="whatsapp">WhatsApp number <span>*</span></label><input id="whatsapp" name="whatsappNumber" type="tel" autocomplete="tel" maxlength="20" required placeholder="+91 98765 43210"><span class="field-hint">Include country code for international numbers.</span></div>
+            <div class="form-field"><label for="mobile">Mobile number <span>*</span></label><input id="mobile" name="mobileNumber" type="tel" autocomplete="tel-national" maxlength="20" required placeholder="Your primary mobile number"></div>
+            <div class="form-field form-field-wide"><label for="address">Current address <span>*</span></label><textarea id="address" name="address" autocomplete="street-address" maxlength="500" required placeholder="House / street / locality"></textarea></div>
+            <div class="form-field"><label for="city">City <span>*</span></label><input id="city" name="city" autocomplete="address-level2" maxlength="100" required placeholder="Your city"></div>
+
+            <div class="form-divider"><h3>Education</h3><p>Choose your highest completed or current qualification.</p></div>
+            <div class="form-field"><label for="qualification">Last qualification <span>*</span></label><select id="qualification" name="qualification" required><option value="">Select qualification</option><option value="10th">10th</option><option value="12th">12th</option><option value="UG">Undergraduate (UG)</option><option value="PG">Postgraduate (PG)</option></select></div>
+            <div class="form-field"><label for="qualification-status">Qualification status <span>*</span></label><select id="qualification-status" name="qualificationStatus" required><option value="">Select status</option><option value="Passed">Passed</option><option value="Pursuing">Pursuing</option></select></div>
+            <div class="form-field" id="degree-field" hidden><label for="degree" id="degree-label">Degree / stream <span>*</span></label><select id="degree" name="degree"><option value="">Select degree / stream</option></select></div>
+            <div class="form-field"><label for="institution">Last or current school / college <span>*</span></label><input id="institution" name="institutionName" maxlength="160" required placeholder="Institution name"></div>
+            <div class="form-field"><label for="institution-city">Institution city <span>*</span></label><input id="institution-city" name="institutionCity" maxlength="100" required placeholder="City where you studied"></div>
+
+            <div class="form-divider"><h3>Program interest</h3><p>Select the area you would like to hear more about.</p></div>
+            <div class="form-field form-field-wide"><label for="program">Program of interest <span>*</span></label><select id="program" name="program" required><option value="">Choose a program</option><option>Digital Marketing</option><option>AI &amp; Machine Learning</option><option>Agri Tech</option><option>Space Technology</option><option>Cyber Security</option><option>Web Development &amp; DevOps</option><option>Digital Forensics</option></select></div>
+            <label class="consent-row"><input type="checkbox" name="consent" required><span>I confirm these details are accurate and agree that TARVIKA Research and Technology may use them to respond to this registration enquiry. I have read the <a href="terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>. <span aria-hidden="true">*</span></span></label>
+            <div class="form-submit-row"><button class="button" id="submit-button" type="submit">Submit registration <span aria-hidden="true">↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></div>
+          </div>
+        </form>
+        <aside class="registration-notice">Submitting this form records your registration interest; it does not guarantee admission, a seat, certification or a university degree. The TARVIKA team will confirm current program details and next steps.</aside>
+        </div>
+        <section class="account-panel" id="login-panel" role="tabpanel" aria-labelledby="login-tab" hidden>
+          <span class="eyebrow">Student account</span><h2>View your registration</h2><p>Sign in with the email and password you used when registering.</p>
+          <form class="account-form form-grid" id="login-form" novalidate>
+            <div class="form-field"><label for="login-email">Email address <span>*</span></label><input id="login-email" name="email" type="email" autocomplete="username" maxlength="254" required placeholder="you@example.com"></div>
+            <div class="form-field"><label for="login-password">Password <span>*</span></label><input id="login-password" name="password" type="password" autocomplete="current-password" maxlength="128" required placeholder="Your password"></div>
+            <div class="form-submit-row"><button class="button button-dark" id="login-button" type="submit">Sign in</button><p class="form-status" id="login-status" role="status" aria-live="polite"></p></div>
+          </form>
+          <section class="profile-panel" id="profile-panel" aria-live="polite" hidden>
+            <h3>Your saved registration</h3><p id="profile-id-line"></p><dl class="profile-grid" id="profile-details"></dl>
+            <button class="button" id="logout-button" type="button">Sign out</button>
+          </section>
+        </section>
+      </div>
+    </section>
+
+    <section class="registration-success" id="registration-success" aria-labelledby="success-title" tabindex="-1" hidden>
+      <span class="eyebrow">Registration received</span><h2 id="success-title">Thank you for registering.</h2><p>Your details have been saved. Keep this student reference ID for future communication with TARVIKA.</p>
+      <div class="student-id-box"><div><span>STUDENT REFERENCE ID</span><strong id="student-id"></strong></div><button class="button button-dark" id="copy-id" type="button">Copy ID</button></div>
+      <div class="success-actions"><button class="button" id="download-id" type="button">Save ID details</button><a class="button button-dark" href="admission.html">Continue to admission</a><a class="button button-dark" href="index.html">Return to TARVIKA</a></div>
+      <p class="success-warning">Save this ID somewhere safe. It is a registration reference, not a password or login credential.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© <span id="year">2026</span> TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script>
+  <script src="registration.js"></script>
+</body>
+</html>

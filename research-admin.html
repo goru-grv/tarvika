@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#17251e">
+  <meta name="description" content="Restricted TARVIKA research submission review console.">
+  <title>Research Review | TARVIKA Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="portals.css">
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+  <main class="portal-main"><div class="wrap">
+    <div class="portal-heading"><div><span class="eyebrow">Restricted admin workspace</span><h1>Research submission review.</h1><p>Review proposals, record a decision and send the researcher a clear next step.</p></div></div>
+    <section class="portal-login" id="admin-login"><h2>Admin sign in</h2><p>Only accounts explicitly enabled for research administration can access the queue.</p><form id="admin-login-form" novalidate><div class="portal-login-grid"><div><label for="admin-email">Admin email</label><input id="admin-email" type="email" autocomplete="username" required maxlength="254" placeholder="admin@example.com"></div><div><label for="admin-password">Password</label><input id="admin-password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Your password"></div></div><div class="portal-login-actions"><button class="button button-dark" id="admin-login-button" type="submit">Sign in</button><p class="portal-login-status" id="admin-login-status" role="status" aria-live="polite"></p></div></form></section>
+    <section id="admin-dashboard" hidden><div class="portal-toolbar"><p id="admin-account-label">Review queue</p><div><button class="button button-dark" id="refresh-queue" type="button">Refresh queue</button> <button class="button button-dark" id="admin-logout" type="button">Sign out</button></div></div>
+      <div class="portal-layout"><section class="portal-panel"><div class="portal-panel-head"><h2>Research proposals</h2><p id="admin-count">Loading…</p></div><div class="portal-list" id="admin-submission-list"></div></section>
+        <section class="portal-panel portal-detail"><div class="portal-panel-head"><h2>Review proposal</h2><p>Review details and send status plus feedback.</p></div><div class="portal-empty" id="admin-empty">Choose a proposal from the queue.</div><div class="portal-detail-content" id="admin-detail" hidden></div></section>
+      </div>
+    </section>
+    <aside class="portal-callout">Admin authorization is enforced by the Worker and Firebase database rules. Hiding this page URL is not the security control.</aside>
+  </div></main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© 2026 TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script><script src="research-admin.js"></script>
+</body>
+</html>

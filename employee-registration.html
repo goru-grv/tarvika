@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251e">
+  <meta name="description" content="Apply to work, collaborate or contribute as a mentor with TARVIKA Research and Technology.">
+  <title>Work With TARVIKA | Employee Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    .employee-hero { padding: 58px 0 64px; }
+    .employee-hero h1 { max-width: 850px; font-size: clamp(2.3rem, 4.8vw, 4rem); }
+    .employee-wrap { width: min(1000px, calc(100% - 48px)); margin-inline: auto; }
+    .employee-main { padding: 48px 0 82px; }
+    .employee-intro { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:25px; }
+    .employee-intro h2 { margin:10px 0 5px; font-size:1.7rem; }
+    .employee-intro p { max-width:620px; margin:0; color:var(--muted); font-size:.92rem; }
+    .employee-form { padding:30px; border:1px solid var(--line); background:var(--white); }
+    .employee-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 24px; }
+    .employee-field { min-width:0; }
+    .employee-field-wide, .employee-divider, .employee-consent, .employee-actions { grid-column:1/-1; }
+    .employee-field label { display:block; margin-bottom:7px; color:var(--ink); font-size:.87rem; font-weight:700; }
+    .employee-field label span { color:#9a542f; }
+    .employee-field input, .employee-field select, .employee-field textarea { width:100%; min-height:47px; padding:10px 12px; border:1px solid rgba(32,39,32,.23); border-radius:2px; background:var(--white); color:var(--ink); font:inherit; font-size:.93rem; }
+    .employee-field textarea { min-height:115px; resize:vertical; }
+    .employee-field input:focus, .employee-field select:focus, .employee-field textarea:focus { outline:2px solid var(--leaf); outline-offset:2px; }
+    .employee-hint { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; }
+    .employee-divider { margin-top:7px; padding-top:20px; border-top:1px solid var(--line); }
+    .employee-divider h3 { margin:0 0 5px; font-size:1.1rem; }
+    .employee-divider p { margin:0; color:var(--muted); font-size:.84rem; }
+    .employee-consent { display:flex; align-items:flex-start; gap:10px; color:#505b51; font-size:.84rem; }
+    .employee-consent input { width:18px; height:18px; flex:none; margin:2px 0 0; accent-color:var(--leaf); }
+    .employee-consent a { color:var(--leaf); text-decoration:underline; text-decoration-color:var(--saffron); text-underline-offset:3px; }
+    .employee-actions { display:flex; align-items:center; flex-wrap:wrap; gap:14px; }
+    .employee-actions .button { margin:0; border:0; cursor:pointer; }
+    .employee-actions .button:disabled { opacity:.65; cursor:wait; }
+    .employee-status { min-height:24px; margin:0; color:var(--muted); font-size:.88rem; }
+    .employee-status.is-error { color:#9d2f28; }
+    .employee-notice { margin-top:20px; padding:16px 19px; border-left:3px solid var(--saffron); background:#eeece1; color:#4c564d; font-size:.84rem; }
+    .employee-success { width:min(740px,calc(100% - 48px)); margin:55px auto 80px; padding:35px; border-top:4px solid var(--leaf); background:var(--white); }
+    .employee-success h2 { margin:12px 0 8px; font-size:1.9rem; }
+    .employee-success p { color:var(--muted); }
+    .employee-reference { margin:20px 0; padding:17px 19px; border:1px dashed var(--leaf); background:#f0f2e9; }
+    .employee-reference span { display:block; color:var(--muted); font-size:.78rem; }
+    .employee-reference strong { display:block; margin-top:4px; color:var(--forest); font:800 1.2rem var(--display); overflow-wrap:anywhere; }
+    .employee-success .button { margin:0; cursor:pointer; }
+    [hidden] { display:none !important; }
+    @media(max-width:720px) {
+      .employee-hero { padding:44px 0; }
+      .employee-wrap,.employee-success { width:calc(100% - 36px); }
+      .employee-main { padding:36px 0 60px; }
+      .employee-form { padding:21px 17px; }
+      .employee-grid { grid-template-columns:1fr; gap:17px; }
+      .employee-field-wide,.employee-divider,.employee-consent,.employee-actions { grid-column:auto; }
+      .employee-actions { align-items:stretch; flex-direction:column; }
+      .employee-actions .button { width:100%; }
+      .employee-success { margin:36px auto 58px; padding:25px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+    <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+      <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+      <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div></header>
+  <main>
+    <section class="page-hero employee-hero"><div class="wrap"><span class="eyebrow">Work with TARVIKA</span><h1>Bring your skills, curiosity and perspective.</h1><p>Share your interest in joining or contributing to TARVIKA Research and Technology. Tell us about your background and the kind of work you hope to do.</p></div></section>
+    <section class="employee-main"><div class="employee-wrap">
+      <div class="employee-intro"><div><span class="eyebrow">Candidate application</span><h2>Tell us about yourself.</h2><p>Complete this form for employment, research, internship, mentorship or project-collaboration consideration. Required fields are marked <span aria-hidden="true">*</span>.</p></div></div>
+      <form class="employee-form" id="employee-form" novalidate><div class="employee-grid">
+        <div class="employee-divider"><h3>Contact information</h3><p>Use details where the TARVIKA team can reach you.</p></div>
+        <div class="employee-field"><label for="employee-name">Full name <span>*</span></label><input id="employee-name" name="fullName" autocomplete="name" maxlength="100" required placeholder="Your full name"></div>
+        <div class="employee-field"><label for="employee-email">Email address <span>*</span></label><input id="employee-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></div>
+        <div class="employee-field"><label for="employee-phone">Phone / WhatsApp <span>*</span></label><input id="employee-phone" name="phone" type="tel" autocomplete="tel" maxlength="20" required placeholder="Include country code"></div>
+        <div class="employee-field"><label for="employee-city">Current city <span>*</span></label><input id="employee-city" name="city" autocomplete="address-level2" maxlength="100" required placeholder="Your city"></div>
+        <div class="employee-field"><label for="employee-organization">Current institution / organization</label><input id="employee-organization" name="organization" maxlength="160" placeholder="If applicable"></div>
+
+        <div class="employee-divider"><h3>Role and background</h3><p>Select the type of opportunity that best matches your interest.</p></div>
+        <div class="employee-field"><label for="role-type">Application type <span>*</span></label><select id="role-type" name="roleType" required><option value="">Choose an option</option><option>Full-time employee</option><option>Research associate</option><option>Internship applicant</option><option>Mentor / subject expert</option><option>Project collaborator</option></select></div>
+        <div class="employee-field"><label for="role-interest">Role / area of interest <span>*</span></label><input id="role-interest" name="roleInterest" maxlength="160" required placeholder="For example, AI research, teaching, operations"></div>
+        <div class="employee-field"><label for="education">Highest education / relevant qualification <span>*</span></label><input id="education" name="education" maxlength="160" required placeholder="Qualification and subject"></div>
+        <div class="employee-field"><label for="experience">Relevant experience <span>*</span></label><select id="experience" name="experience" required><option value="">Choose experience level</option><option>No formal experience yet</option><option>Less than 1 year</option><option>1–2 years</option><option>3–5 years</option><option>More than 5 years</option></select></div>
+        <div class="employee-field employee-field-wide"><label for="skills">Relevant skills and areas of expertise <span>*</span></label><textarea id="skills" name="skills" required maxlength="1200" placeholder="List relevant technical, research, teaching or professional skills."></textarea></div>
+        <div class="employee-field"><label for="availability">Availability <span>*</span></label><select id="availability" name="availability" required><option value="">Choose availability</option><option>Immediate</option><option>Within 2 weeks</option><option>Within 1 month</option><option>Flexible / discuss</option></select></div>
+        <div class="employee-field"><label for="portfolio">Portfolio / LinkedIn / publications</label><input id="portfolio" name="portfolioUrl" type="url" maxlength="500" placeholder="https://... (optional)"><span class="employee-hint">Only share links you are comfortable making available to the review team.</span></div>
+        <div class="employee-field employee-field-wide"><label for="resume-link">CV / resume link</label><input id="resume-link" name="resumeUrl" type="url" maxlength="500" placeholder="HTTPS link to a CV you are authorized to share"><span class="employee-hint">This form accepts a link, not a file upload. Use a private or access-controlled link where possible.</span></div>
+        <div class="employee-field employee-field-wide"><label for="motivation">Why would you like to work or collaborate with TARVIKA? <span>*</span></label><textarea id="motivation" name="motivation" required minlength="40" maxlength="3000" placeholder="Introduce your experience, interests, relevant work and the contribution you would like to explore. (40–3000 characters)"></textarea><span class="employee-hint"><span id="motivation-count">0</span> / 3000 characters</span></div>
+        <label class="employee-consent"><input type="checkbox" name="consent" required><span>I confirm that the information is accurate and may be used to review this application and contact me. I have read the <a href="terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>. <span aria-hidden="true">*</span></span></label>
+        <div class="employee-actions"><button class="button" id="employee-submit" type="submit">Submit application ↗</button><p class="employee-status" id="employee-status" role="status" aria-live="polite"></p></div>
+      </div></form>
+      <aside class="employee-notice">Submitting this form is an expression of interest, not a job offer or guarantee of employment, internship, mentorship, project placement, compensation or selection. Any opportunity, duties, timeline and compensation will be discussed separately and confirmed in writing.</aside>
+    </div></section>
+    <section class="employee-success" id="employee-success" tabindex="-1" hidden><span class="eyebrow">Application received</span><h2>Thank you for your interest.</h2><p>Your application has been sent for review. Keep this reference for any follow-up.</p><div class="employee-reference"><span>APPLICATION REFERENCE</span><strong id="employee-reference"></strong></div><button class="button button-dark" id="copy-employee-reference" type="button">Copy reference</button> <a class="button button-dark" href="index.html">Return to TARVIKA</a></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><a href="terms-and-conditions.html">Terms &amp; Conditions</a><span class="copyright">© 2026 TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script><script src="employee-registration.js"></script>
+</body>
+</html>

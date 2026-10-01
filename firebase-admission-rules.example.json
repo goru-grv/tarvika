@@ -1,0 +1,84 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "admins": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": false
+      }
+    },
+    "registrations": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid && !data.exists()"
+      }
+    },
+    "admissions": {
+      ".read": "auth != null && root.child('admins').child(auth.uid).val() === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('admins').child(auth.uid).val() === true)",
+        "$applicationId": {
+          ".write": "auth != null && ((auth.uid === $uid && !data.exists()) || root.child('admins').child(auth.uid).val() === true)",
+          "status": {
+            ".validate": "auth != null && (auth.uid === $uid ? newData.val() === 'submitted' : root.child('admins').child(auth.uid).val() === true)"
+          },
+          "fees": {
+            ".validate": "auth != null && (auth.uid === $uid ? newData.val() === null : root.child('admins').child(auth.uid).val() === true)"
+          },
+          "reviewNote": {
+            ".validate": "auth != null && root.child('admins').child(auth.uid).val() === true"
+          },
+          "reviewedBy": {
+            ".validate": "auth != null && root.child('admins').child(auth.uid).val() === true"
+          },
+          "reviewedAt": {
+            ".validate": "auth != null && root.child('admins').child(auth.uid).val() === true"
+          }
+        }
+      }
+    },
+    "researchSubmissions": {
+      ".read": "auth != null && root.child('admins').child(auth.uid).val() === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('admins').child(auth.uid).val() === true)",
+        "$reference": {
+          ".write": "auth != null && ((auth.uid === $uid && !data.exists()) || root.child('admins').child(auth.uid).val() === true)",
+          "status": {
+            ".validate": "auth != null && (auth.uid === $uid ? newData.val() === 'submitted' : root.child('admins').child(auth.uid).val() === true)"
+          },
+          "adminFeedback": {
+            ".validate": "auth != null && root.child('admins').child(auth.uid).val() === true"
+          },
+          "reviewedBy": {
+            ".validate": "auth != null && root.child('admins').child(auth.uid).val() === true"
+          },
+          "updatedAt": {
+            ".validate": "auth != null && root.child('admins').child(auth.uid).val() === true"
+          },
+          "messages": {
+            "$messageId": {
+              ".write": "auth != null && (auth.uid === $uid || root.child('admins').child(auth.uid).val() === true)",
+              "authorRole": {
+                ".validate": "auth != null && (auth.uid === $uid ? newData.val() === 'researcher' : newData.val() === 'admin' && root.child('admins').child(auth.uid).val() === true)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "enquiries": {
+      "$enquiryId": {
+        ".write": "auth != null && !data.exists() && newData.hasChildren(['name', 'email', 'message'])",
+        ".validate": "newData.hasChildren(['name', 'email', 'message'])"
+      }
+    },
+    "employeeApplications": {
+      ".read": "auth != null && root.child('admins').child(auth.uid).val() === true",
+      "$reference": {
+        ".write": "auth != null && !data.exists() && newData.hasChildren(['reference', 'fullName', 'email', 'roleType', 'roleInterest', 'education', 'experience', 'skills', 'availability', 'motivation', 'status'])",
+        ".validate": "newData.hasChildren(['reference', 'fullName', 'email', 'roleType', 'roleInterest', 'education', 'experience', 'skills', 'availability', 'motivation', 'status'])"
+      }
+    }
+  }
+}

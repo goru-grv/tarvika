@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#17251e">
+  <meta name="description" content="Sign in to follow up on your TARVIKA research collaboration submissions.">
+  <title>Researcher Portal | TARVIKA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="portals.css">
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+  <main class="portal-main"><div class="wrap">
+    <div class="portal-heading"><div><span class="eyebrow">Researcher portal</span><h1>Your proposals and follow-ups.</h1><p>Sign in with the email and password used when you submitted a research proposal. Review status and communicate with the TARVIKA team.</p></div></div>
+    <section class="portal-login" id="researcher-login"><h2>Researcher sign in</h2><p>Your account only gives access to submissions owned by that account.</p><form id="researcher-login-form" novalidate><div class="portal-login-grid"><div><label for="researcher-email">Email address</label><input id="researcher-email" type="email" autocomplete="username" required maxlength="254" placeholder="you@example.com"></div><div><label for="researcher-password">Password</label><input id="researcher-password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Your password"></div></div><div class="portal-login-actions"><button class="button button-dark" id="researcher-login-button" type="submit">Sign in</button><p class="portal-login-status" id="researcher-login-status" role="status" aria-live="polite"></p></div></form><aside class="portal-callout">New researcher? <a href="research-collaboration-registration.html">Create an account by submitting a research proposal</a>.</aside></section>
+    <section id="researcher-dashboard" hidden>
+      <div class="portal-toolbar"><p id="researcher-account-label"></p><button class="button button-dark" id="researcher-logout" type="button">Sign out</button></div>
+      <div class="portal-layout"><section class="portal-panel"><div class="portal-panel-head"><h2>My submissions</h2><p id="researcher-count">Loading…</p></div><div class="portal-list" id="researcher-submission-list"></div></section>
+        <section class="portal-panel portal-detail"><div class="portal-panel-head"><h2>Submission details</h2><p>Status, review notes and messages appear here.</p></div><div class="portal-empty" id="researcher-empty">Choose one of your submissions to view details.</div><div class="portal-detail-content" id="researcher-detail" hidden></div></section>
+      </div>
+    </section>
+  </div></main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© 2026 TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script><script src="research-portal.js"></script>
+</body>
+</html>

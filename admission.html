@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#17251e">
+  <meta name="description" content="Apply for a TARVIKA learning program and follow your admission application.">
+  <title>Admissions | TARVIKA Research and Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="portals.css">
+  <style>
+    .admission-hero { padding: 52px 0 58px; }
+    .admission-hero h1 { max-width: 820px; font-size: clamp(2.2rem, 4.8vw, 3.8rem); }
+    .admission-hero .hero-row { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; }
+    .admission-motto { flex:none; margin:0 0 4px; color:var(--saffron-pale); font:1.05rem/1.9 var(--sanskrit); text-align:right; }
+    .admission-main { padding:46px 0 78px; }
+    .admission-form { margin-top:22px; padding:30px; border:1px solid var(--line); background:var(--white); }
+    .admission-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 24px; }
+    .admission-divider { grid-column:1/-1; margin-top:8px; padding-top:20px; border-top:1px solid var(--line); }
+    .admission-divider h3 { margin:0 0 5px; font-size:1.12rem; }
+    .admission-divider p { margin:0; color:var(--muted); font-size:.84rem; }
+    .admission-field { min-width:0; }
+    .admission-field-wide { grid-column:1/-1; }
+    .admission-field label { display:block; margin-bottom:7px; font-size:.86rem; font-weight:700; }
+    .admission-field input,.admission-field select,.admission-field textarea { width:100%; min-height:46px; padding:10px 12px; border:1px solid rgba(32,39,32,.23); border-radius:2px; background:var(--white); color:var(--ink); font:inherit; }
+    .admission-field textarea { min-height:90px; resize:vertical; }
+    .admission-field input[readonly] { background:#f0f0e9; color:#586057; }
+    .admission-field input[type=file] { min-height:auto; padding:10px; }
+    .admission-hint { display:block; margin-top:6px; color:var(--muted); font-size:.78rem; }
+    .admission-consent { grid-column:1/-1; display:flex; align-items:flex-start; gap:10px; color:#505b51; font-size:.84rem; }
+    .admission-consent input { width:18px; height:18px; flex:none; margin:2px 0 0; accent-color:var(--leaf); }
+    .admission-actions { grid-column:1/-1; display:flex; align-items:center; flex-wrap:wrap; gap:14px; }
+    .admission-actions .button { margin:0; border:0; cursor:pointer; }
+    .admission-actions .button:disabled { opacity:.65; cursor:wait; }
+    .admission-success { margin-top:24px; padding:20px; border-left:3px solid var(--leaf); background:#eef2e8; }
+    .admission-success h3 { margin:0 0 5px; }
+    .admission-success p { margin:0; color:#4d594d; }
+    .admission-file-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:9px; }
+    .admission-file-chip { padding:5px 8px; background:#eeece1; color:#4c564d; font-size:.78rem; }
+    @media(max-width:720px) {
+      .admission-hero { padding:42px 0; }
+      .admission-hero .hero-row { align-items:flex-start; flex-direction:column; gap:16px; }
+      .admission-motto { text-align:left; }
+      .admission-main { padding:34px 0 58px; }
+      .admission-form { padding:21px 17px; }
+      .admission-grid { grid-template-columns:1fr; gap:17px; }
+      .admission-divider,.admission-field-wide,.admission-consent,.admission-actions { grid-column:auto; }
+      .admission-actions { align-items:stretch; flex-direction:column; }
+      .admission-actions .button { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+  <main>
+    <section class="page-hero admission-hero"><div class="wrap hero-row"><div><span class="eyebrow">Student admissions</span><h1>Your next learning step, in one place.</h1><p>Sign in with the student account you created during registration. Your existing contact and education details will be used to prefill this application.</p></div><p class="admission-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</p></div></section>
+    <section class="admission-main"><div class="wrap">
+      <section class="portal-login" id="admission-login"><h2>Student sign in</h2><p>Admission applications are linked to your registered student account.</p><form id="admission-login-form" novalidate><div class="portal-login-grid"><div><label for="admission-email">Email address</label><input id="admission-email" type="email" autocomplete="username" required maxlength="254" placeholder="you@example.com"></div><div><label for="admission-password">Password</label><input id="admission-password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Your password"></div></div><div class="portal-login-actions"><button class="button button-dark" id="admission-login-button" type="submit">Sign in</button><p class="portal-login-status" id="admission-login-status" role="status" aria-live="polite"></p></div></form><aside class="portal-callout">Not registered yet? <a href="registration.htm">Complete student registration first</a>.</aside></section>
+      <section id="admission-dashboard" hidden>
+        <div class="portal-toolbar"><p id="student-account-label"></p><button class="button button-dark" id="admission-logout" type="button">Sign out</button></div>
+        <section class="portal-panel"><div class="portal-panel-head"><h2>Your student record</h2><p>These details come from your student registration account.</p></div><dl class="admission-grid" id="registration-prefill" style="padding:18px 22px;margin:0"></dl></section>
+        <div class="admission-success" id="existing-admissions" hidden></div>
+        <section class="portal-panel" style="margin-top:22px"><div class="portal-panel-head"><h2>Admission application</h2><p>Fields marked required must be completed. Each image or document must be under 2 MB.</p></div>
+          <form class="admission-form" id="admission-form" novalidate><div class="admission-grid">
+            <div class="admission-divider"><h3>Student details</h3><p>Registration information is read from your account and cannot be overwritten here.</p></div>
+            <div class="admission-field"><label for="admission-dob">Date of birth *</label><input id="admission-dob" name="dateOfBirth" type="date" required></div>
+            <div class="admission-field"><label for="admission-gender">Gender *</label><select id="admission-gender" name="gender" required><option value="">Choose</option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option><option>Self-describe</option></select></div>
+            <div class="admission-field"><label for="admission-nationality">Nationality *</label><input id="admission-nationality" name="nationality" required maxlength="80" value="Indian"></div>
+            <div class="admission-field"><label for="admission-program">Program applying for *</label><select id="admission-program" name="program" required><option>Digital Marketing</option><option>AI &amp; Machine Learning</option><option>Agri Tech</option><option>Space Technology</option><option>Cyber Security</option><option>Web Development &amp; DevOps</option><option>Digital Forensics</option></select></div>
+            <div class="admission-field"><label for="admission-qualification">Last qualification *</label><select id="admission-qualification" name="qualification" required><option value="10th">10th</option><option value="12th">12th</option><option value="UG">UG</option><option value="PG">PG</option></select></div>
+            <div class="admission-field"><label for="admission-qualification-status">Qualification status *</label><select id="admission-qualification-status" name="qualificationStatus" required><option>Passed</option><option>Pursuing</option></select></div>
+            <div class="admission-field"><label for="admission-institution">School / college *</label><input id="admission-institution" name="institutionName" required maxlength="160"></div>
+            <div class="admission-field"><label for="admission-institution-city">Institution city *</label><input id="admission-institution-city" name="institutionCity" required maxlength="100"></div>
+            <div class="admission-field admission-field-wide"><label for="permanent-address">Permanent address *</label><textarea id="permanent-address" name="permanentAddress" required maxlength="500" placeholder="Full permanent address"></textarea></div>
+
+            <div class="admission-divider"><h3>Parent / guardian</h3><p>Contact information for admission communication and emergencies.</p></div>
+            <div class="admission-field"><label for="guardian-name">Parent / guardian full name *</label><input id="guardian-name" name="guardianName" required maxlength="120"></div>
+            <div class="admission-field"><label for="guardian-relation">Relationship *</label><select id="guardian-relation" name="guardianRelation" required><option value="">Choose relationship</option><option>Father</option><option>Mother</option><option>Guardian</option><option>Other</option></select></div>
+            <div class="admission-field"><label for="guardian-phone">Parent / guardian phone *</label><input id="guardian-phone" name="guardianPhone" type="tel" required maxlength="20" placeholder="+91 ..."></div>
+            <div class="admission-field"><label for="guardian-email">Parent / guardian email</label><input id="guardian-email" name="guardianEmail" type="email" maxlength="254"></div>
+            <div class="admission-field admission-field-wide"><label for="guardian-occupation">Parent / guardian occupation</label><input id="guardian-occupation" name="guardianOccupation" maxlength="120"></div>
+            <div class="admission-field"><label for="emergency-name">Emergency contact name *</label><input id="emergency-name" name="emergencyName" required maxlength="120"></div>
+            <div class="admission-field"><label for="emergency-phone">Emergency contact phone *</label><input id="emergency-phone" name="emergencyPhone" type="tel" required maxlength="20"></div>
+
+            <div class="admission-divider"><h3>Photo and documents</h3><p>Files are private in R2 and each file must be 2 MB or smaller. Allowed: JPG, PNG, WebP, PDF.</p></div>
+            <div class="admission-field"><label for="student-photo">Student photo *</label><input id="student-photo" type="file" accept="image/jpeg,image/png,image/webp" required><span class="admission-hint">Recent passport-style photo; must be smaller than 2 MB.</span></div>
+            <div class="admission-field"><label for="guardian-photo">Parent / guardian photo</label><input id="guardian-photo" type="file" accept="image/jpeg,image/png,image/webp"><span class="admission-hint">Optional; smaller than 2 MB.</span></div>
+            <div class="admission-field"><label for="marksheet">Latest marksheet</label><input id="marksheet" type="file" accept="image/jpeg,image/png,image/webp,application/pdf"><span class="admission-hint">Optional; smaller than 2 MB.</span></div>
+            <div class="admission-field"><label for="identity-proof">Identity proof</label><input id="identity-proof" type="file" accept="image/jpeg,image/png,image/webp,application/pdf"><span class="admission-hint">Optional; share only what is necessary; smaller than 2 MB.</span></div>
+            <div class="admission-field admission-field-wide"><label for="address-proof">Address proof</label><input id="address-proof" type="file" accept="image/jpeg,image/png,image/webp,application/pdf"><span class="admission-hint">Optional; smaller than 2 MB.</span></div>
+            <label class="admission-consent"><input type="checkbox" name="consent" required><span>I confirm these details are accurate and consent to their use for admission review and communication. I will only upload documents I am authorized to share, and I have read the <a href="terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>. *</span></label>
+            <div class="admission-actions"><button class="button" id="submit-admission" type="submit">Submit admission application ↗</button><p class="portal-notice" id="admission-status" role="status" aria-live="polite"></p></div>
+          </div></form>
+        </section>
+      </section>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© 2026 TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script><script src="admission.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#17251e">
+  <meta name="description" content="Restricted TARVIKA student admissions and fee review console.">
+  <title>Admissions Admin | TARVIKA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="portals.css">
+  <style>
+    .admissions-review { display:grid; gap:22px; }
+    .admin-student-data { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 22px; margin:18px 0; border-top:1px solid var(--line); }
+    .admin-student-row { min-width:0; padding:12px 0; border-bottom:1px solid var(--line); overflow-wrap:anywhere; }
+    .admin-student-row dt { color:var(--muted); font-size:.76rem; }
+    .admin-student-row dd { margin:4px 0 0; font-size:.9rem; white-space:pre-wrap; }
+    .admin-files { display:flex; flex-wrap:wrap; gap:9px; margin:15px 0 22px; }
+    .admin-file { min-width:110px; padding:9px; border:1px solid var(--line); background:#f4f3eb; }
+    .admin-file img { width:96px; height:96px; margin-bottom:8px; object-fit:cover; background:#e5e4db; }
+    .admin-file span { display:block; max-width:140px; overflow-wrap:anywhere; color:var(--muted); font-size:.76rem; }
+    .admin-file button { margin-top:7px; padding:5px 8px; border:1px solid var(--line); background:var(--white); font-size:.78rem; cursor:pointer; }
+    .fee-editor { padding:20px; border:1px solid var(--line); background:#f4f3eb; }
+    .fee-editor h3 { margin:0 0 5px; font-size:1.1rem; }
+    .fee-editor > p { color:var(--muted); font-size:.82rem; }
+    .fee-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+    .fee-field label { display:block; margin-bottom:5px; font-size:.77rem; font-weight:700; }
+    .fee-field input { width:100%; min-height:42px; padding:8px 10px; border:1px solid rgba(32,39,32,.23); background:var(--white); font:inherit; }
+    .fee-summary { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:15px; padding-top:13px; border-top:1px solid var(--line); }
+    .fee-summary span { color:var(--muted); font-size:.82rem; }
+    .fee-summary strong { display:block; color:var(--forest); font:700 1rem var(--display); }
+    .admin-submit-row { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:16px; }
+    .admin-submit-row .button { margin:0; border:0; cursor:pointer; }
+    .admin-submit-row .button:disabled { opacity:.6; cursor:wait; }
+    @media(max-width:760px) { .admin-student-data { grid-template-columns:1fr; } .fee-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+  <main class="portal-main"><div class="wrap">
+    <div class="portal-heading"><div><span class="eyebrow">Restricted admissions workspace</span><h1>Student applications and fees.</h1><p>Review submitted details and documents, set an admission status, and enter the current fee components. The total and balance are calculated before saving.</p></div></div>
+    <section class="portal-login" id="admin-login"><h2>Admin sign in</h2><p>Access is checked by the Worker and the Firebase admin marker; the page URL itself is not a security control.</p><form id="admin-login-form" novalidate><div class="portal-login-grid"><div><label for="admin-email">Admin email</label><input id="admin-email" type="email" autocomplete="username" required maxlength="254" placeholder="admin@example.com"></div><div><label for="admin-password">Password</label><input id="admin-password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Your password"></div></div><div class="portal-login-actions"><button class="button button-dark" id="admin-login-button" type="submit">Sign in</button><p class="portal-login-status" id="admin-login-status" role="status" aria-live="polite"></p></div></form></section>
+    <section id="admin-dashboard" hidden><div class="portal-toolbar"><p id="admin-account-label">Admission queue</p><div><button class="button button-dark" id="refresh-admissions" type="button">Refresh</button> <button class="button button-dark" id="admin-logout" type="button">Sign out</button></div></div>
+      <div class="portal-layout"><section class="portal-panel"><div class="portal-panel-head"><h2>Applications</h2><p id="admission-count">Loading…</p></div><div class="portal-list" id="admission-list"></div></section>
+        <section class="portal-panel portal-detail"><div class="portal-panel-head"><h2>Admission review</h2><p>Personal records and uploaded documents are private.</p></div><div class="portal-empty" id="admission-empty">Choose an application from the queue.</div><div class="portal-detail-content" id="admission-detail" hidden></div></section>
+      </div>
+    </section>
+    <aside class="portal-callout">No fee amounts are pre-filled as TARVIKA pricing. Enter only the approved current charges. Firebase rules must restrict admission records and R2 file reads to the student owner or an authorized admin.</aside>
+  </div></main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© 2026 TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script><script src="admin.js"></script>
+</body>
+</html>

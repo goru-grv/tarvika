@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251e">
+  <meta name="description" content="Why TARVIKA exists: practical technology learning, responsible applied research and collaboration rooted in Bharat and open to the world.">
+  <title>Why TARVIKA | Research. Technology. Innovation.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    .why-hero { padding: 78px 0 82px; }
+    .why-hero h1 { max-width: 900px; }
+    .why-hero .hero-copy { max-width: 740px; }
+    .why-motto { margin-top: 22px !important; color: var(--saffron-pale) !important; font: 600 1.2rem/1.9 var(--sanskrit) !important; }
+    .why-band { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
+    .why-band h2 { margin: 15px 0; font-size: clamp(2rem, 4vw, 3.2rem); }
+    .why-band p { color: var(--muted); }
+    .why-statement { margin: 18px 0 0; padding: 20px 22px; border-left: 3px solid var(--saffron); background: #eeece1; color: var(--forest); font: 700 1.02rem/1.65 var(--display); }
+    .why-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .why-item { min-height: 250px; padding: 28px 30px; background: var(--paper); }
+    .why-item .number { display: block; margin-bottom: 20px; color: var(--leaf); font: 700 .8rem var(--display); letter-spacing: .1em; }
+    .why-item h3 { margin: 0 0 12px; font-size: 1.2rem; }
+    .why-item p { margin: 0; color: var(--muted); }
+    .why-principles { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+    .why-principle { min-height: 210px; padding: 23px 20px; border-right: 1px solid rgba(255,255,255,.2); }
+    .why-principle:first-child { border-left: 1px solid rgba(255,255,255,.2); }
+    .why-principle span { display: block; margin-bottom: 22px; color: var(--saffron-pale); font: 700 .78rem var(--display); letter-spacing: .1em; }
+    .why-principle h3 { margin: 0 0 9px; font-size: 1.05rem; }
+    .why-principle p { margin: 0; color: rgba(255,255,255,.7); font-size: .88rem; }
+    .why-audience { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-block: 1px solid var(--line); }
+    .why-audience article { padding: 25px 27px; background: var(--white); }
+    .why-audience h3 { margin: 0 0 9px; font-size: 1.1rem; }
+    .why-audience p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .why-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .why-cta .button { margin-top: 0; }
+    @media (max-width: 720px) {
+      .why-hero { padding: 58px 0 62px; }
+      .why-band { grid-template-columns: 1fr; gap: 20px; }
+      .why-grid, .why-audience { grid-template-columns: 1fr; }
+      .why-item { min-height: 0; padding: 24px; }
+      .why-principles { grid-template-columns: 1fr 1fr; }
+      .why-principle { min-height: 0; padding: 21px 15px; border-bottom: 1px solid rgba(255,255,255,.2); }
+      .why-principle:nth-child(odd) { border-left: 1px solid rgba(255,255,255,.2); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+  <main>
+    <section class="page-hero why-hero"><div class="wrap"><span class="eyebrow">Why TARVIKA</span><h1>A place for potential to grow into purposeful work.</h1><p class="hero-copy">Knowing about a technology and knowing how to use it thoughtfully are different things. TARVIKA exists to help people move from curiosity to practical capability, research questions and considered next steps.</p><p class="why-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</p></div></section>
+
+    <section class="section section-white"><div class="wrap why-band"><div><span class="eyebrow">Why we began</span><h2>Technology needs people who can question, not only operate.</h2></div><div><p>Artificial Intelligence, cybersecurity, space systems, digital agriculture and software are changing how communities and organizations work. At the same time, access to information alone does not always provide the practical experience, research habits or responsible judgment needed to apply these technologies well.</p><p>TARVIKA was created as a place where learners, researchers, professionals and organizations can explore that gap together: build foundations, test ideas, learn from evidence and connect technology to real contexts.</p><p class="why-statement">Our purpose is not to promise instant outcomes. It is to create better conditions for learning, inquiry, collaboration and steady progress.</p></div></div></section>
+
+    <section class="section"><div class="wrap"><div class="section-heading"><span class="eyebrow">What makes the approach different</span><h2>Principles that shape the work.</h2><p>These are commitments in how we approach learning and research, not promises of a guaranteed result.</p></div><div class="why-grid">
+      <article class="why-item"><span class="number">01 / PRACTICAL LEARNING</span><h3>Understand it. Try it. Explain it.</h3><p>Learning should connect concepts with exercises, tools and projects. Participants should be able to describe what they did, why they chose an approach and what they learned from the result.</p></article>
+      <article class="why-item"><span class="number">02 / RESEARCH MINDSET</span><h3>Start with a clear question.</h3><p>Applied research begins by understanding context, assumptions, evidence, methods and limitations. Prototypes and experiments are opportunities to learn, not proof of impact by themselves.</p></article>
+      <article class="why-item"><span class="number">03 / RESPONSIBLE TECHNOLOGY</span><h3>Consider people and consequences.</h3><p>Privacy, safety, accessibility, consent, data quality and possible harms deserve attention from the beginning of a project—not only after a solution is built.</p></article>
+      <article class="why-item"><span class="number">04 / OPEN COLLABORATION</span><h3>Different perspectives strengthen ideas.</h3><p>Students, researchers, educators, practitioners, institutions and communities can bring different knowledge. Collaboration works best when goals, roles, approvals and expectations are agreed clearly.</p></article>
+      <article class="why-item"><span class="number">05 / ROOTED IN BHARAT</span><h3>Carry heritage forward through inquiry.</h3><p>India's intellectual traditions inspire curiosity and openness to knowledge. We bring that perspective into conversation with modern scientific methods, evidence and global learning.</p></article>
+      <article class="why-item"><span class="number">06 / HONEST SCOPE</span><h3>Say clearly what is—and is not—offered.</h3><p>Every program has a defined scope. Availability, fees, duration, prerequisites, instructors and deliverables should be confirmed for that specific offering rather than assumed.</p></article>
+    </div></div></section>
+
+    <section class="section section-green"><div class="wrap"><div class="section-heading"><span class="eyebrow">A way of working</span><h2>Move from interest to a responsible next step.</h2><p>Whether the starting point is a course, an experiment or a collaboration idea, the same care applies.</p></div><div class="why-principles">
+      <article class="why-principle"><span>01 / LEARN</span><h3>Build foundations</h3><p>Understand the ideas, vocabulary and tools relevant to the chosen field.</p></article>
+      <article class="why-principle"><span>02 / EXPLORE</span><h3>Try and investigate</h3><p>Use exercises, reading, prototypes or analysis to examine a question.</p></article>
+      <article class="why-principle"><span>03 / REFLECT</span><h3>Review the evidence</h3><p>Document outcomes, limitations, feedback and what remains uncertain.</p></article>
+      <article class="why-principle"><span>04 / CONNECT</span><h3>Plan what comes next</h3><p>Discuss further learning, research or collaboration with clear expectations.</p></article>
+    </div></div></section>
+
+    <section class="section section-white"><div class="wrap"><div class="section-heading"><span class="eyebrow">Who this is for</span><h2>Different journeys can meet around a good question.</h2><p>TARVIKA welcomes people looking to learn, investigate a problem or exchange knowledge.</p></div><div class="why-audience">
+      <article><h3>Students and early-career learners</h3><p>Explore technology fields, build foundational skills and gain practical project experience appropriate to your learning stage.</p></article>
+      <article><h3>Researchers and educators</h3><p>Discuss research questions, workshops and academic exchange where methods, resources, approvals and institutional responsibilities align.</p></article>
+      <article><h3>Working professionals and organizations</h3><p>Share domain challenges, explore learning opportunities or discuss a scoped applied-technology project.</p></article>
+      <article><h3>Startups and community groups</h3><p>Bring local needs and practical context into early problem framing and responsible exploration.</p></article>
+    </div></div></section>
+
+    <section class="section"><div class="wrap"><div class="section-heading"><span class="eyebrow">Clarity matters</span><h2>What choosing TARVIKA does—and does not—mean.</h2><p>We want learners and collaborators to make decisions with accurate expectations.</p></div><div class="content-grid"><article class="content-block"><span class="number">WHAT WE OFFER</span><h3>Learning and research-oriented initiatives.</h3><p>TARVIKA offers technology courses, training, workshops, project learning and research-oriented activities. Specific program information is shared by the team for each offering.</p></article><article class="content-block"><span class="number">WHAT WE DO NOT CLAIM</span><h3>No unverified guarantees.</h3><p>TARVIKA does not award university degrees. A course enquiry is not a confirmed admission, job, internship, salary, funding, partnership or research outcome. Any certificate or academic recognition must identify its issuing organization and terms.</p></article></div><div class="notice">Before enrolling or beginning a collaboration, confirm the current scope, eligibility, fees, schedule, responsibilities, approvals and any applicable written terms with the TARVIKA team.</div></div></section>
+
+    <section class="section section-green"><div class="wrap"><div class="section-heading"><span class="eyebrow">Take the next step</span><h2>Explore, ask or share an idea.</h2><p>Start with the path that matches your current question.</p></div><div class="why-cta"><a class="button" href="programs.html">Explore programs ↗</a><a class="button button-dark" href="about.html#vision-mission">Read our vision &amp; mission ↗</a><a class="button button-dark" href="research-collaboration.html">Research collaboration ↗</a><a class="button button-dark" href="contact.html">Contact TARVIKA ↗</a></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© 2026 TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251e">
+  <meta name="description" content="Submit a research idea or collaboration proposal to TARVIKA Research and Technology.">
+  <title>Research Submission | TARVIKA Research and Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    .research-hero { padding: 54px 0 60px; }
+    .research-hero h1 { max-width: 850px; font-size: clamp(2.25rem, 4.8vw, 4rem); }
+    .research-hero .hero-row { display: flex; align-items: end; justify-content: space-between; gap: 32px; }
+    .research-motto { flex: none; margin: 0 0 4px; color: var(--saffron-pale); font: 1.08rem/1.9 var(--sanskrit); text-align: right; }
+    .submission-wrap { width: min(1040px, calc(100% - 48px)); margin-inline: auto; }
+    .submission-section { padding: 52px 0 84px; }
+    .submission-intro { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .submission-intro h2 { margin: 10px 0 5px; font-size: 1.75rem; }
+    .submission-intro p { max-width: 660px; margin: 0; color: var(--muted); font-size: .92rem; }
+    .required-label { flex: none; color: var(--muted); font-size: .82rem; }
+    .submission-form { padding: 32px; border: 1px solid var(--line); background: var(--white); }
+    .researcher-account-mode { display: inline-flex; gap: 4px; margin-bottom: 22px; padding: 4px; border: 1px solid var(--line); background: #eeece1; }
+    .researcher-account-mode button { min-height: 40px; padding: 8px 14px; border: 0; background: transparent; color: var(--muted); font: 700 .83rem var(--sans); cursor: pointer; }
+    .researcher-account-mode button[aria-pressed="true"] { background: var(--forest); color: white; }
+    .submission-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px 24px; }
+    .submission-field { min-width: 0; }
+    .submission-field-wide, .submission-divider, .submission-consent, .submission-actions { grid-column: 1 / -1; }
+    .submission-field label { display: block; margin-bottom: 7px; color: var(--ink); font-size: .88rem; font-weight: 700; }
+    .submission-field label span { color: #9a542f; }
+    .submission-field input, .submission-field select, .submission-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid rgba(32,39,32,.23); border-radius: 2px; background: var(--white); color: var(--ink); font: inherit; font-size: .94rem; }
+    .submission-field textarea { min-height: 120px; resize: vertical; }
+    .submission-field input:focus, .submission-field select:focus, .submission-field textarea:focus { outline: 2px solid var(--leaf); outline-offset: 2px; }
+    .submission-field input::placeholder, .submission-field textarea::placeholder { color: #858b83; }
+    .submission-hint { display: block; margin-top: 6px; color: var(--muted); font-size: .78rem; }
+    .submission-divider { margin: 8px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
+    .submission-divider h3 { margin: 0 0 5px; font-size: 1.13rem; }
+    .submission-divider p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .submission-consent { display: flex; align-items: flex-start; gap: 11px; margin-top: 4px; color: #505b51; font-size: .84rem; }
+    .submission-consent input { width: 18px; height: 18px; flex: none; margin: 2px 0 0; accent-color: var(--leaf); }
+    .submission-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+    .submission-actions .button { min-width: 210px; margin: 0; border: 0; cursor: pointer; }
+    .submission-actions .button:disabled { opacity: .65; cursor: wait; }
+    .submission-status { min-height: 24px; margin: 0; color: var(--muted); font-size: .88rem; }
+    .submission-status.is-error { color: #9d2f28; }
+    .submission-notice { margin-top: 20px; padding: 17px 20px; border-left: 3px solid var(--saffron); background: #eeece1; color: #4c564d; font-size: .84rem; }
+    .submission-success { width: min(780px, calc(100% - 48px)); margin: 60px auto 82px; padding: 38px; border-top: 4px solid var(--leaf); background: var(--white); }
+    .submission-success h2 { margin: 13px 0 9px; font-size: 2rem; }
+    .submission-success > p { color: var(--muted); }
+    .reference-box { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 24px 0; padding: 18px 20px; border: 1px dashed var(--leaf); background: #f0f2e9; }
+    .reference-box span { display: block; color: var(--muted); font-size: .78rem; }
+    .reference-box strong { display: block; margin-top: 4px; color: var(--forest); font: 800 1.2rem var(--display); letter-spacing: .04em; overflow-wrap: anywhere; }
+    .reference-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .reference-actions .button { margin: 0; cursor: pointer; }
+    .success-note { margin: 18px 0 0; font-size: .82rem; }
+    [hidden] { display: none !important; }
+    @media (max-width: 720px) {
+      .research-hero { padding: 44px 0; }
+      .research-hero .hero-row { align-items: flex-start; flex-direction: column; gap: 18px; }
+      .research-motto { text-align: left; font-size: 1rem; }
+      .submission-wrap, .submission-success { width: calc(100% - 36px); }
+      .submission-section { padding: 40px 0 60px; }
+      .submission-intro { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .submission-form { padding: 22px 18px; }
+      .researcher-account-mode { display: grid; width: 100%; grid-template-columns: 1fr 1fr; }
+      .researcher-account-mode button { padding-inline: 7px; }
+      .submission-grid { grid-template-columns: 1fr; gap: 18px; }
+      .submission-field-wide, .submission-divider, .submission-consent, .submission-actions { grid-column: auto; }
+      .submission-actions { align-items: stretch; flex-direction: column; }
+      .submission-actions .button { width: 100%; }
+      .submission-success { margin: 38px auto 60px; padding: 27px 21px; }
+      .reference-box { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html" aria-label="TARVIKA Research and Technology home"><img class="brand-logo" src="image/logo.png" alt="TARVIKA logo"><span><span class="brand-name">TARVIKA Research and Technology</span><span class="brand-caption">Research · Learning · Innovation</span></span></a>
+  <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
+    <details class="nav-dropdown"><summary>Programs</summary><div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div></details>
+    <a href="research-collaboration.html">Research collaboration</a><a href="mentorship.html">Mentorship</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+
+  <main>
+    <section class="page-hero research-hero"><div class="wrap hero-row"><div><span class="eyebrow">Research collaboration portal</span><h1>Bring your research question to the table.</h1><p>Share your research idea, people involved and the kind of exchange you are looking for. TARVIKA can review the proposal and respond about possible next steps; submission does not guarantee acceptance or partnership.</p></div><p class="research-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</p></div></section>
+
+    <section class="submission-section" id="submission-section"><div class="submission-wrap">
+      <div class="submission-intro"><div><span class="eyebrow">Research proposal</span><h2>Tell us what you are exploring.</h2><p>Create a researcher account with your email and password; use it later to follow up on this proposal. Required fields are marked <span aria-hidden="true">*</span>.</p></div><span class="required-label">Already submitted? <a href="research-portal.html">Sign in to your researcher portal</a></span></div>
+      <div class="researcher-account-mode" role="group" aria-label="Researcher account option"><button id="new-researcher-account" type="button" aria-pressed="true">Create account</button><button id="existing-researcher-account" type="button" aria-pressed="false">Use existing account</button></div>
+      <form class="submission-form" id="research-form" novalidate><div class="submission-grid">
+        <div class="submission-divider"><h3>Researcher and team</h3><p>Tell us who is submitting and how the team can reach you.</p></div>
+        <div class="submission-field"><label for="researcher-name">Your full name <span>*</span></label><input id="researcher-name" name="fullName" autocomplete="name" maxlength="100" required placeholder="Lead researcher or contact person"></div>
+        <div class="submission-field"><label for="contact-email">Contact email <span>*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></div>
+        <div class="submission-field"><label for="research-password">Create account password <span>*</span></label><input id="research-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required placeholder="At least 8 characters"><span class="submission-hint">Your password is handled by Firebase Authentication, not saved in the proposal.</span></div>
+        <div class="submission-field" id="confirm-password-field"><label for="research-password-confirm">Confirm password <span>*</span></label><input id="research-password-confirm" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" required placeholder="Enter the same password again"></div>
+        <div class="submission-field"><label for="contact-phone">Phone / WhatsApp</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="Include country code"></div>
+        <div class="submission-field"><label for="organization">Institution / organization</label><input id="organization" name="organization" maxlength="160" placeholder="University, company or independent"></div>
+        <div class="submission-field"><label for="researcher-city">City</label><input id="researcher-city" name="city" autocomplete="address-level2" maxlength="100" placeholder="Your city"></div>
+        <div class="submission-field"><label for="team-name">Research team name</label><input id="team-name" name="teamName" maxlength="160" placeholder="If applicable"></div>
+
+        <div class="submission-divider"><h3>Mentor and collaborators</h3><p>Mentor details are optional. Add them only when the mentor has agreed to be listed.</p></div>
+        <div class="submission-field"><label for="mentor-name">Mentor / supervisor name</label><input id="mentor-name" name="mentorName" maxlength="100" placeholder="If applicable"></div>
+        <div class="submission-field"><label for="mentor-email">Mentor email</label><input id="mentor-email" name="mentorEmail" type="email" maxlength="254" placeholder="If applicable"></div>
+        <div class="submission-field submission-field-wide"><label for="mentor-role">Mentor role and institution</label><input id="mentor-role" name="mentorRole" maxlength="120" placeholder="For example, faculty supervisor, department / institution"></div>
+
+        <div class="submission-divider"><h3>Research proposal</h3><p>Describe the research clearly enough for an initial review.</p></div>
+        <div class="submission-field submission-field-wide"><label for="research-title">Research title / subject <span>*</span></label><input id="research-title" name="researchTitle" maxlength="180" required placeholder="A concise working title"></div>
+        <div class="submission-field"><label for="research-field">Field of research <span>*</span></label><select id="research-field" name="researchField" required><option value="">Select a field</option><option>Artificial Intelligence &amp; Machine Learning</option><option>Data Science</option><option>Software &amp; Web Technologies</option><option>Cybersecurity &amp; Digital Forensics</option><option>Agriculture &amp; Agri Tech</option><option>Space Technology</option><option>Cloud, DevOps &amp; Automation</option><option>Healthcare Technology</option><option>Education Technology</option><option>Climate &amp; Sustainability</option><option>Other</option></select></div>
+        <div class="submission-field"><label for="research-topic">Topic / keywords <span>*</span></label><input id="research-topic" name="researchTopic" maxlength="240" required placeholder="Comma-separated topics or keywords"></div>
+        <div class="submission-field"><label for="research-stage">Current research stage <span>*</span></label><select id="research-stage" name="researchStage" required><option value="">Select stage</option><option>Idea</option><option>Literature review</option><option>Proposal</option><option>In progress</option><option>Prototype / pilot</option><option>Completed</option></select></div>
+        <div class="submission-field"><label for="collaboration-type">What collaboration are you seeking? <span>*</span></label><select id="collaboration-type" name="collaborationType" required><option value="">Select collaboration type</option><option>Research discussion</option><option>Academic or university collaboration</option><option>Student / researcher project</option><option>Mentorship or expert review</option><option>Industry or community collaboration</option><option>Workshop or knowledge exchange</option></select></div>
+        <div class="submission-field submission-field-wide"><label for="research-summary">Describe your research <span>*</span></label><textarea id="research-summary" name="researchSummary" minlength="40" maxlength="6000" required placeholder="Explain the question or problem, why it matters, your approach, intended outcomes and what kind of input or collaboration would help. (40–6000 characters)"></textarea><span class="submission-hint"><span id="summary-count">0</span> / 6000 characters</span></div>
+        <div class="submission-field submission-field-wide"><label for="criteria-fit">How does this fit TARVIKA's research and technology focus?</label><textarea id="criteria-fit" name="criteriaFit" maxlength="2000" placeholder="Relevant objectives, practical or academic value, intended participants, resources or approvals needed"></textarea><span class="submission-hint">Mention ethics approval, permissions, data sensitivity or funding requirements if relevant. Do not include confidential, patient, student or proprietary data.</span></div>
+        <div class="submission-field submission-field-wide"><label for="supporting-link">Supporting project / publication link</label><input id="supporting-link" name="supportingLink" type="url" maxlength="500" placeholder="https://... (optional)"><span class="submission-hint">Use a link that is safe to share. File uploads are not enabled on this portal.</span></div>
+
+        <label class="submission-consent"><input type="checkbox" name="consent" required><span>I confirm I am permitted to share this proposal and the listed contact details. I understand that submitting it is an enquiry only and does not establish a partnership, funding, mentorship or acceptance, and I have read the <a href="terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>. <span aria-hidden="true">*</span></span></label>
+        <div class="submission-actions"><button class="button" id="research-submit" type="submit">Submit research proposal <span aria-hidden="true">↗</span></button><p class="submission-status" id="research-status" role="status" aria-live="polite"></p></div>
+      </div></form>
+      <aside class="submission-notice">Please do not submit confidential research, personal data about participants, unpublished proprietary material or sensitive datasets. TARVIKA will review the summary and contact you to discuss scope and next steps; any collaboration requires separate agreement.</aside>
+    </div></section>
+
+    <section class="submission-success" id="research-success" aria-labelledby="research-success-title" tabindex="-1" hidden><span class="eyebrow">Submission received</span><h2 id="research-success-title">Thank you for sharing your research.</h2><p>Your proposal has been sent for initial review. Keep this reference for any follow-up with the TARVIKA team.</p><div class="reference-box"><div><span>RESEARCH SUBMISSION REFERENCE</span><strong id="research-reference"></strong></div><button class="button button-dark" id="copy-reference" type="button">Copy reference</button></div><div class="reference-actions"><button class="button" id="download-reference" type="button">Save reference details</button><a class="button button-dark" href="research-collaboration.html">Back to research collaboration</a></div><p class="success-note">A reference confirms receipt only; it is not confirmation of acceptance, funding or partnership.</p></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href="index.html"><img src="image/logo.png" alt=""><span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span></a><span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span><span class="copyright">© <span id="year">2026</span> TARVIKA Research and Technology</span></div></footer>
+  <script src="pages.js"></script>
+  <script src="research-collaboration-registration.js"></script>
+</body>
+</html>

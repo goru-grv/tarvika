@@ -1,0 +1,19 @@
+name = "tarvika"
+main = "worker.js"
+compatibility_date = "2025-03-01"
+
+[[r2_buckets]]
+binding = "TARVIKA_R2"
+bucket_name = "tarvika"
+
+# Replace these with the exact origins serving the website.
+# Add each Firebase config entry in the Cloudflare dashboard as its own Secret:
+# FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_DATABASE_URL,
+# FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET,
+# FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID, FIREBASE_MEASUREMENT_ID.
+# Student registrations use Firebase Email/Password Auth; no service-account key is used.
+# The separate legacy enquiry endpoint uses Firebase Anonymous Auth.
+# Research proposals use Firebase Email/Password researcher accounts.
+# Enable both providers if the legacy enquiry route remains in use.
+# Add ADMIN_UIDS as a Cloudflare variable containing the comma-separated Firebase Auth UID allowlist.
+# R2 file API remains disabled until its authentication flow is implemented.
