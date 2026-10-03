@@ -10,6 +10,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="pages.css">
+  <style>
+    .faq-language-tools { display:flex; justify-content:center; margin:-14px auto 26px; }
+    .faq-language-toggle { display:inline-flex; align-items:center; gap:12px; padding:8px 17px 8px 9px; border:1px solid rgba(73,102,72,.22); border-radius:999px; background:var(--white); color:var(--forest); font:700 .9rem var(--sans); cursor:pointer; box-shadow:0 5px 18px rgba(23,37,30,.06); transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease; }
+    .faq-language-toggle:hover { transform:translateY(-1px); border-color:var(--leaf); box-shadow:0 8px 22px rgba(23,37,30,.1); }
+    .faq-language-toggle:focus-visible { outline:3px solid rgba(73,102,72,.25); outline-offset:3px; }
+    .faq-language-toggle .language-mark { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--forest); color:#fff; font:600 1.05rem var(--sanskrit); }
+    .faq-language-toggle .language-arrow { color:var(--leaf); font-size:1rem; transition:transform .2s ease; }
+    .faq-language-toggle[aria-expanded="true"] .language-arrow { transform:rotate(180deg); }
+    .faq-language-panel { display:none; max-width:680px; margin:0 auto 34px; padding:20px 24px; border:1px solid var(--line); border-top:3px solid var(--saffron); border-radius:8px; background:#fffdf8; color:var(--ink); box-shadow:0 10px 28px rgba(23,37,30,.06); }
+    .faq-language-panel.open { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .faq-language-copy { margin:0; color:var(--muted); font-size:.9rem; line-height:1.6; }
+    .faq-language-copy strong { display:block; margin-bottom:2px; color:var(--forest); font-size:.98rem; }
+    .faq-language-copy span { font-family:var(--sanskrit); }
+    .faq-language-status { display:none; margin:0; color:var(--muted); font-size:.88rem; }
+    .faq-language-panel.open .faq-language-status { display:block; }
+    @media (max-width:600px) { .faq-language-panel.open { align-items:flex-start; flex-direction:column; gap:12px; padding:17px; } }
+    @media (prefers-reduced-motion:reduce) { .faq-language-toggle,.faq-language-toggle .language-arrow { transition:none; } }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,13 +40,24 @@
         </span>
       </a>
       <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="why-tarvika.html">Why TARVIKA</a>
-        <details class="nav-dropdown">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="why-tarvika.html">Why TARVIKA</a>
+  <details class="nav-dropdown">
           <summary>Programs</summary>
-          <div class="dropdown-menu"><a href="digitalmarketing.html">Digital Marketing</a><a href="aiml.html">AI &amp; Machine Learning</a><a href="agritech.html">Agri Tech</a><a href="spacetechnology.html">Space Technology</a><a href="cybersecurity.html">Cyber Security</a><a href="webdevops.html">Web Development &amp; DevOps</a><a href="digitalforensics.html">Digital Forensics</a></div>
+          <div class="dropdown-menu">
+            <a href="programs.html">All Programs</a>
+            <a href="digitalmarketing.html">Digital Marketing</a>
+            <a href="aiml.html">AI &amp; Machine Learning</a>
+            <a href="agritech.html">Agri Tech</a>
+            <a href="spacetechnology.html">Space Technology</a>
+            <a href="cybersecurity.html">Cyber Security</a>
+            <a href="webdevops.html">Web Development &amp; DevOps</a>
+            <a href="digitalforensics.html">Digital Forensics</a>
+          </div>
         </details>
-        <a href="careers.html">Job board</a><a href="career-support.html">Career support</a><a href="news.html">News</a><a href="announcements.html">Announcements</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
-      </nav>
+  <a href="contact.html">Contact</a>
+</nav>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -56,6 +85,18 @@
             <button type="button" class="faq-filter-btn" data-category="admissions">Admissions &amp; Structure</button>
             <button type="button" class="faq-filter-btn" data-category="research">Research &amp; Mentorship</button>
           </div>
+        </div>
+
+        <div class="faq-language-tools">
+          <button class="faq-language-toggle" id="faq-language-toggle" type="button" aria-expanded="false" aria-controls="faq-language-panel">
+            <span class="language-mark" aria-hidden="true">&#2309;</span>
+            <span>Read this FAQ in Hindi</span>
+            <span class="language-arrow" aria-hidden="true">&#8964;</span>
+          </button>
+        </div>
+        <div class="faq-language-panel" id="faq-language-panel" aria-live="polite">
+          <p class="faq-language-copy"><strong>Hindi FAQ, written for TARVIKA</strong><span lang="hi">&#2340;&#2366;&#2352;&#2381;&#2357;&#2367;&#2325;&#2366; &#2325;&#2375; &#2354;&#2367;&#2319; &#2340;&#2376;&#2351;&#2366;&#2352; &#2325;&#2367;&#2319; &#2327;&#2319; &#2361;&#2367;&#2306;&#2342;&#2368; &#2313;&#2340;&#2381;&#2340;&#2352;&#2404;</span></p>
+          <p class="faq-language-status" id="faq-language-status" aria-live="polite">Showing the Hindi version of the questions and answers.</p>
         </div>
 
         <div id="no-faq-match" class="no-faq-match">
@@ -231,23 +272,14 @@
       <div class="footer-column">
         <h4>Explore</h4>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="programs.html">Programs</a>
           <a href="research-collaboration.html">Research collaboration</a>
-          <details class="footer-explore-more">
-            <summary class="footer-more-btn">Read more <span class="arrow">⌄</span></summary>
-            <div class="footer-extra-links">
-              <a href="blog.html">Blog</a>
-              <a href="resources.html">Resources</a>
-              <a href="careers.html">Job board</a>
-              <a href="career-support.html">Career support</a>
-              <a href="news.html">News</a>
-              <a href="announcements.html">Announcements</a>
-              <a href="faq.html">FAQ</a>
-              <a href="contact.html">Contact</a>
-            </div>
-          </details>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="careers.html">Job board</a>
+          <a href="career-support.html">Career support</a>
+          <a href="news.html">News</a>
+          <a href="announcements.html">Announcements</a>
+          <a href="faq.html">FAQ</a>
         </nav>
       </div>
 
@@ -266,15 +298,24 @@
         <div class="footer-contact">
           <a href="mailto:info@tarvikart.com">info@tarvikart.com</a>
           <span>Udaipur, Rajasthan</span>
-          <a href="contact.html">Contact us</a>
+          
         </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Terms &amp; Policies</h4>
+        <nav class="footer-links" aria-label="Terms and policies">
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          <a href="refund-policy.html">Refund Policy</a>
+          <a href="marketing-policy.html">Marketing Policy</a>
+          <a href="academic-policy.html">Academic Policy</a>
+        </nav>
       </div>
     </div>
 
     <div class="wrap footer-bottom">
 
       <div class="footer-legal">
-        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
         <span class="copyright">&copy; <span id="year">2026</span> TARVIKA Research and Technology</span>
       </div>
     </div>
@@ -288,6 +329,61 @@
       const faqGroups = document.querySelectorAll('.faq-group');
       const faqCards = document.querySelectorAll('.faq-card');
       const noMatchMsg = document.getElementById('no-faq-match');
+      const languageToggle = document.getElementById('faq-language-toggle');
+      const languagePanel = document.getElementById('faq-language-panel');
+      let faqLanguage = 'en';
+      const hindiQuestions = [
+        'TARVIKA Research and Technology क्या है?', 'TARVIKA की शुरुआत क्यों हुई?', 'TARVIKA का मुख्य दृष्टिकोण और उद्देश्य क्या है?', 'क्या TARVIKA विश्वविद्यालय की डिग्री देता है?',
+        'TARVIKA में अभी कौन से कार्यक्रम उपलब्ध हैं?', 'कार्यक्रम की अवधि, योग्यता, शुल्क और रूपरेखा कैसे तय होती है?', 'TARVIKA की सीखने की पद्धति कैसे अलग है?',
+        'TARVIKA के कार्यक्रमों के लिए कौन आवेदन कर सकता है?', 'प्रवेश के लिए पंजीकरण या आवेदन कैसे करें?', 'कार्यक्रम पूरा करने पर क्या प्रमाणपत्र मिलेगा?',
+        'संस्थान, शोधकर्ता या स्टार्टअप TARVIKA के साथ कैसे सहयोग कर सकते हैं?', 'मार्गदर्शन कार्यक्रम कैसे काम करता है?', 'TARVIKA जिम्मेदार शोध के लिए किन तरीकों का पालन करता है?'
+      ];
+      const hindiAnswers = [
+        '<p><strong>TARVIKA Research and Technology</strong> उदयपुर, राजस्थान स्थित एक भारतीय शोध, शिक्षा और प्रौद्योगिकी-केंद्रित संस्थान है। यह वैदिक ज्ञान को आधुनिक तकनीक और व्यावहारिक शिक्षा से जोड़ता है।</p>',
+        '<p>TARVIKA की शुरुआत इस सोच से हुई कि हर व्यक्ति की क्षमता को आगे बढ़ने का अवसर मिलना चाहिए। यह व्यावहारिक सीखने, प्रयोग करने और ज्ञान को उपयोगी काम से जोड़ने का अवसर देता है।</p>',
+        '<p><strong>दृष्टि:</strong> ऐसा नवाचार-तंत्र बनाना जहाँ पारंपरिक ज्ञान, वैज्ञानिक सोच और नई तकनीक एक-दूसरे से सीखें।</p><p><strong>उद्देश्य:</strong> तकनीकी शिक्षा को व्यावहारिक, शोध-केंद्रित और वास्तविक चुनौतियों से जुड़ा बनाना।</p>',
+        '<p><strong>नहीं। TARVIKA विश्वविद्यालय की डिग्री प्रदान नहीं करता।</strong> यहाँ तकनीकी पाठ्यक्रम, व्यावहारिक प्रशिक्षण, कार्यशालाएँ, परियोजना-आधारित शिक्षा और शोध पहलें उपलब्ध हैं।</p>',
+        '<p>कार्यक्रमों में कृत्रिम बुद्धिमत्ता और मशीन लर्निंग, एग्री टेक, अंतरिक्ष तकनीक, साइबर सुरक्षा, वेब डेवलपमेंट और DevOps, डिजिटल फॉरेंसिक्स तथा डिजिटल मार्केटिंग शामिल हैं।</p>',
+        '<p>हर समूह के लिए रूपरेखा, पूर्व-योग्यता, अवधि, पढ़ाई का तरीका और शुल्क अलग हो सकते हैं। मौजूदा जानकारी के लिए TARVIKA प्रवेश टीम से संपर्क करें।</p>',
+        '<p>हम तीन चरणों में सीखने पर ध्यान देते हैं: <strong>समझें</strong>—संदर्भ और उद्देश्य जानें; <strong>खोजें</strong>—अवधारणाएँ और साधन आज़माएँ; <strong>विचार करें</strong>—नतीजों और जिम्मेदार अगले कदमों पर गौर करें।</p>',
+        '<p>छात्र, कामकाजी पेशेवर, शिक्षक, शोधकर्ता और विभिन्न क्षेत्रों में रुचि रखने वाले लोग आवेदन कर सकते हैं।</p>',
+        '<p><a href="admission.html">प्रवेश पोर्टल</a> पर ऑनलाइन पंजीकरण करें या <a href="contact.html">संपर्क पृष्ठ</a> पर पूछताछ भेजें। हमारी टीम अगले चरण बताएगी।</p>',
+        '<p>कार्यक्रम की आवश्यकताओं, उपस्थिति और परियोजना मूल्यांकन को पूरा करने वाले प्रतिभागियों को TARVIKA Research and Technology की ओर से पूर्णता प्रमाणपत्र दिया जाता है।</p>',
+        '<p>हम संयुक्त शोध प्रस्तावों, कार्यशालाओं और तकनीकी आदान-प्रदान के लिए सहयोग का स्वागत करते हैं। प्रस्ताव <a href="research-collaboration.html">शोध सहयोग पृष्ठ</a> पर भेजें। साझेदारी की शर्तें अलग से तय होती हैं।</p>',
+        '<p>अनुभवी पेशेवर, शिक्षक और विषय-विशेषज्ञ विद्यार्थियों को परियोजनाओं, करियर और तकनीकी शोध में मार्गदर्शन देते हैं। जानकारी के लिए <a href="mentorship.html">मार्गदर्शन पृष्ठ</a> देखें।</p>',
+        '<p>हम नैतिक शोध, डेटा गोपनीयता, प्रतिभागियों की सुरक्षा, सीमाओं की पारदर्शी जानकारी और उचित अनुमतियों पर जोर देते हैं। संवेदनशील शोध की उचित समीक्षा की जाती है।</p>'
+      ];
+      const originalQuestions = [...document.querySelectorAll('.faq-question')].map(node => node.textContent);
+      const originalAnswers = [...document.querySelectorAll('.faq-answer')].map(node => node.innerHTML);
+      const filterLabels = ['All Questions', 'About TARVIKA', 'Programs & Disciplines', 'Admissions & Structure', 'Research & Mentorship'];
+      const groupLabels = ['01. About TARVIKA', '02. Programs & Disciplines', '03. Admissions & Registration', '04. Research Collaboration & Mentorship'];
+      const translatedFilters = ['सभी प्रश्न', 'TARVIKA के बारे में', 'कार्यक्रम और विषय', 'प्रवेश और संरचना', 'शोध और मार्गदर्शन'];
+      const translatedGroups = ['01. TARVIKA के बारे में', '02. कार्यक्रम और विषय', '03. प्रवेश और पंजीकरण', '04. शोध सहयोग और मार्गदर्शन'];
+
+      function setFaqLanguage(language) {
+        faqLanguage = language;
+        const hindi = language === 'hi';
+        const questions = [...document.querySelectorAll('.faq-question')];
+        const answers = [...document.querySelectorAll('.faq-answer')];
+        questions.forEach((node, index) => node.textContent = hindi ? hindiQuestions[index] : originalQuestions[index]);
+        answers.forEach((node, index) => node.innerHTML = hindi ? hindiAnswers[index] : originalAnswers[index]);
+        filterBtns.forEach((button, index) => button.textContent = hindi ? translatedFilters[index] : filterLabels[index]);
+        faqGroups.forEach((group, index) => group.querySelector('.faq-group-title').textContent = hindi ? translatedGroups[index] : groupLabels[index]);
+        searchInput.placeholder = hindi ? 'प्रश्न खोजें (जैसे AI, प्रवेश, शुल्क...)' : 'Search questions by keyword (e.g. AI, admissions, fees, degrees...)';
+        noMatchMsg.querySelector('p').textContent = hindi ? 'कोई मिलता-जुलता प्रश्न नहीं मिला। दूसरा शब्द खोजें या सभी श्रेणियाँ देखें।' : 'No matching questions found. Try searching for another keyword or view all categories.';
+        languageToggle.querySelector('span:nth-child(2)').textContent = hindi ? 'Read this FAQ in English' : 'Read this FAQ in Hindi';
+        document.getElementById('faq-language-status').textContent = hindi ? 'प्रश्न और उत्तर हिंदी में दिखाए जा रहे हैं।' : 'Showing the Hindi version of the questions and answers.';
+        searchInput.setAttribute('aria-label', hindi ? 'प्रश्न खोजें' : 'Search FAQ');
+        document.documentElement.lang = hindi ? 'hi' : 'en';
+        filterFAQ();
+      }
+
+      languageToggle.addEventListener('click', () => {
+        const showHindi = faqLanguage === 'en';
+        languageToggle.setAttribute('aria-expanded', String(showHindi));
+        languagePanel.classList.toggle('open', showHindi);
+        setFaqLanguage(showHindi ? 'hi' : 'en');
+      });
 
       let currentCategory = 'all';
 
