@@ -75,7 +75,8 @@
             <p>Technology education, student skill development, workshops and career-oriented learning.</p>
             <span class="partner-card-more">Know more <span aria-hidden="true">↗</span></span>
           </article>
-          <article class="partner-card" onclick="openPartnership('universities')"><span class="number">02 / HIGHER EDUCATION</span>
+          <article class="partner-card" onclick="openPartnership('universities')"><span class="number">02 / HIGHER
+              EDUCATION</span>
             <h3>Universities &amp; Colleges</h3>
             <p>Academic collaboration, student projects, industry-oriented learning, workshops and mentorship.</p>
             <span class="partner-card-more">Know more <span aria-hidden="true">↗</span></span>
@@ -85,7 +86,8 @@
             <p>Research collaboration, knowledge exchange, joint initiatives and innovation-focused projects.</p>
             <span class="partner-card-more">Know more <span aria-hidden="true">↗</span></span>
           </article>
-          <article class="partner-card" onclick="openPartnership('innovation-labs')"><span class="number">04 / EXPERIMENTATION</span>
+          <article class="partner-card" onclick="openPartnership('innovation-labs')"><span class="number">04 /
+              EXPERIMENTATION</span>
             <h3>Laboratories &amp; Innovation Labs</h3>
             <p>Practical experimentation, technology projects, prototyping and innovation programs.</p>
             <span class="partner-card-more">Know more <span aria-hidden="true">↗</span></span>
@@ -319,10 +321,12 @@
     </div>
   </footer>
   <!-- Interactive Partnership Details Modal -->
-  <div class="modal" id="partnership-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal" id="partnership-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-hidden="true">
     <div class="modal-panel" role="document">
       <div class="modal-top">
-        <button class="modal-close" type="button" aria-label="Close partnership details" onclick="closePartnershipModal()">
+        <button class="modal-close" type="button" aria-label="Close partnership details"
+          onclick="closePartnershipModal()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <path d="m6 6 12 12M18 6 6 18" />
           </svg>
@@ -337,9 +341,12 @@
         <h3>Partnership Scope &amp; Opportunities</h3>
         <ul class="modal-highlights" id="modal-highlights"></ul>
         <div class="modal-actions">
-          <a class="button button-dark" id="partnership-link" href="mailto:info@tarvikart.com?subject=TARVIKA%20Partnership%20Enquiry">COLLABORATE NOW <span class="button-arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-dark" id="partnership-link"
+            href="mailto:info@tarvikart.com?subject=TARVIKA%20Partnership%20Enquiry">COLLABORATE NOW <span
+              class="button-arrow" aria-hidden="true">↗</span></a>
         </div>
-        <p class="modal-note">Connect with our institutional collaboration team to initiate custom MOUs and joint initiatives.</p>
+        <p class="modal-note">Connect with our institutional collaboration team to initiate custom MOUs and joint
+          initiatives.</p>
       </div>
     </div>
   </div>
@@ -349,10 +356,8 @@
   <script>
     const partnerships = {
       'schools': {
-        title: 'Schools & K-12 STEM Innovation',
+        title: 'Schools',
         symbol: '01',
-        image: 'image/agritech.png',
-        fallback: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85',
         description: 'Empower school students with practical technology education, hands-on STEM workshops, coding clubs, and early career-oriented technology exposure.',
         topics: [
           'Interactive STEM & Robotics Workshops for Students',
@@ -365,8 +370,6 @@
       'universities': {
         title: 'Universities & Higher Education',
         symbol: '02',
-        image: 'image/webdevops.png',
-        fallback: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85',
         description: 'Bridge the academic-industry gap through joint research projects, internship tracks, industry-aligned syllabus modules, and corporate incubation access.',
         topics: [
           'Joint Industry-Academia Curriculum & Specialization Tracks',
@@ -379,8 +382,6 @@
       'research': {
         title: 'Research Institutions & R&D Labs',
         symbol: '03',
-        image: 'image/ai.png',
-        fallback: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85',
         description: 'Partner on applied research, joint whitepaper publications, technology transfer, and interdisciplinary innovation initiatives across emerging domains.',
         topics: [
           'Joint Applied Research & Scientific Paper Co-Authoring',
@@ -393,8 +394,6 @@
       'innovation-labs': {
         title: 'Laboratories & Innovation Hubs',
         symbol: '04',
-        image: 'image/space.png',
-        fallback: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85',
         description: 'Drive hands-on experimentation, hardware-software prototyping, maker lab activities, and product development partnerships in dedicated facility spaces.',
         topics: [
           'Hardware Prototyping & Embedded Systems Testing Labs',
@@ -407,8 +406,6 @@
       'training': {
         title: 'Training & Educational Organizations',
         symbol: '05',
-        image: 'image/digitalforensics.png',
-        fallback: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85',
         description: 'Co-create specialized skill-development initiatives, joint certification bootcamps, upskilling modules, and continuous learning programs for professionals.',
         topics: [
           'Joint Skill Bootcamps & Specialized Certification Programs',
@@ -421,8 +418,6 @@
       'industry': {
         title: 'Industry & Technology Enterprises',
         symbol: '06',
-        image: 'image/cyber.png',
-        fallback: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85',
         description: 'Collaborate with corporate technology leaders on real-world industrial projects, talent pipelines, tech advisory, and enterprise solution development.',
         topics: [
           'Corporate Talent Pipeline & Specialized Hiring Collaborations',
@@ -443,14 +438,25 @@
 
       document.getElementById('modal-symbol').textContent = p.symbol;
       document.getElementById('modal-title').textContent = p.title;
-      
+
       const imgEl = document.getElementById('modal-image');
-      imgEl.src = p.image;
-      imgEl.alt = p.title;
-      imgEl.onerror = function() {
-        this.onerror = null;
-        this.src = p.fallback;
-      };
+      if (imgEl) {
+        if (p.image) {
+          imgEl.style.display = 'block';
+          imgEl.src = p.image;
+          imgEl.alt = p.title;
+          imgEl.onerror = function () {
+            if (p.fallback) {
+              this.src = p.fallback;
+            } else {
+              this.style.display = 'none';
+            }
+          };
+        } else {
+          imgEl.style.display = 'none';
+          imgEl.src = '';
+        }
+      }
 
       document.getElementById('modal-description').textContent = p.description;
 
