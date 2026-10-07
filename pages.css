@@ -1309,10 +1309,13 @@ body.modal-open {
 
 .modal-image {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  background: #d8d8cb;
-  border-radius: 4px;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  object-position: center;
+  background: #f8faf9;
+  border-radius: 8px;
+  display: block;
 }
 
 .modal-description {
@@ -1393,7 +1396,11 @@ body.modal-open {
   }
 
   .modal-image {
-    height: 175px;
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
