@@ -5,8 +5,10 @@
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .hero-actions .button { margin: 0; }
 .partner-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; border: 1px solid var(--line); background: var(--line); }
-.partner-card { min-height: 220px; padding: 28px; background: var(--paper); transition: background .2s ease; }
+.partner-card { min-height: 220px; padding: 28px; background: var(--paper); transition: background .2s ease; cursor: pointer; position: relative; }
 .partner-card:hover { background: #efeee5; }
+.partner-card-more { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; color: var(--leaf); font-weight: 700; font-size: 0.9rem; }
+.partner-card:hover .partner-card-more { color: var(--forest); text-decoration: underline; }
 .partner-card .number, .benefit .number { display: block; margin-bottom: 24px; color: var(--leaf); font: 700 .74rem var(--display); letter-spacing: .1em; }
 .partner-card h3, .benefit h3 { margin: 0 0 10px; font-size: 1.16rem; }
 .partner-card p, .benefit p { margin: 0; color: var(--muted); font-size: .95rem; }
