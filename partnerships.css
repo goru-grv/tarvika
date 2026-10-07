@@ -1,0 +1,79 @@
+.partnership-hero { padding: 78px 0 84px; }
+.partnership-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; }
+.partnership-hero h1 { max-width: 780px; }
+.partnership-hero p { max-width: 690px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-actions .button { margin: 0; }
+.partner-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; border: 1px solid var(--line); background: var(--line); }
+.partner-card { min-height: 220px; padding: 28px; background: var(--paper); transition: background .2s ease; }
+.partner-card:hover { background: #efeee5; }
+.partner-card .number, .benefit .number { display: block; margin-bottom: 24px; color: var(--leaf); font: 700 .74rem var(--display); letter-spacing: .1em; }
+.partner-card h3, .benefit h3 { margin: 0 0 10px; font-size: 1.16rem; }
+.partner-card p, .benefit p { margin: 0; color: var(--muted); font-size: .95rem; }
+.partnership-why { background: #eeece1; }
+.benefit-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0 32px; border-top: 1px solid var(--line); }
+.benefit { padding: 26px 4px 28px 0; border-bottom: 1px solid var(--line); }
+.benefit .number { margin-bottom: 17px; }
+.opportunity-layout, .outcomes-layout, .suitability-layout { display: grid; grid-template-columns: minmax(260px,.8fr) minmax(0,1.2fr); align-items: start; gap: clamp(42px,8vw,110px); }
+.opportunity-intro h2, .outcomes-intro h2, .suitability-layout h2 { margin: 15px 0; font-size: clamp(2rem,3.5vw,3rem); }
+.opportunity-intro p, .outcomes-intro p, .suitability-layout p { color: var(--muted); }
+.text-link { display: inline-flex; gap: 10px; align-items: center; margin-top: 8px; color: var(--leaf); font-weight: 700; }
+.text-link:hover { color: var(--forest); }
+.opportunity-list, .outcome-list, .suitability-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; }
+.opportunity-list li { padding: 16px 0; border-bottom: 1px solid var(--line); font: 600 1rem/1.4 var(--display); }
+.opportunity-list li::before { content: '↗'; margin-right: 12px; color: var(--saffron); font-size: .9rem; }
+.process-section .section-heading { margin-bottom: 46px; }
+.process-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid rgba(255,255,255,.24); border-bottom: 1px solid rgba(255,255,255,.24); }
+.process-step { min-height: 215px; padding: 24px; border-right: 1px solid rgba(255,255,255,.2); }
+.process-step:first-child { border-left: 1px solid rgba(255,255,255,.2); }
+.step-index { display: block; margin-bottom: 31px; color: var(--saffron-pale); font: 700 .82rem var(--display); letter-spacing: .1em; }
+.process-step h3 { margin: 0 0 10px; }
+.process-step p { margin: 0; color: rgba(255,255,255,.72); font-size: .94rem; }
+.outcomes-layout { align-items: center; }
+.outcome-list { border-top: 1px solid var(--line); }
+.outcome-list li, .suitability-list li { position: relative; padding: 14px 8px 14px 24px; border-bottom: 1px solid var(--line); color: var(--ink); }
+.outcome-list li::before, .suitability-list li::before { position: absolute; left: 2px; color: var(--leaf); content: '—'; }
+.domain-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.domain-card { position: relative; min-height: 145px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); transition: background .2s ease, color .2s ease; }
+.domain-card:hover { background: var(--forest); color: white; }
+.domain-card span { color: var(--leaf); font: 700 .74rem var(--display); }
+.domain-card:hover span { color: var(--saffron-pale); }
+.domain-card h3 { max-width: 225px; margin: 22px 18px 0 0; font-size: 1.03rem; }
+.domain-card b { position: absolute; right: 17px; bottom: 18px; color: var(--saffron); font-size: 1.1rem; }
+.suitability-layout { align-items: center; }
+.suitability-list { border-top: 1px solid var(--line); }
+.partnership-cta .cta-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.partnership-cta .eyebrow { justify-content: center; }
+.partnership-cta h2 { margin: 18px 0 14px; font-size: clamp(2.2rem,4.7vw,3.8rem); }
+.partnership-cta p { max-width: 640px; margin: 0 auto; color: rgba(255,255,255,.76); font-size: 1.05rem; }
+.partnership-cta .hero-actions { justify-content: center; }
+.partnership-cta .cta-note { margin-top: 18px; font-size: .82rem; }
+.partnerships-page :focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+@media(max-width:960px) {
+  .partnership-hero-grid { grid-template-columns: minmax(0,1fr); }
+  .partner-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .domain-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .process-step { padding: 20px; }
+}
+@media(max-width:720px) {
+  .partnership-hero-grid, .opportunity-layout, .outcomes-layout, .suitability-layout { grid-template-columns: 1fr; gap: 34px; }
+  .partnership-hero .hero-actions { align-items: stretch; flex-direction: column; }
+  .partnership-hero .hero-actions .button { width: 100%; }
+  .partner-grid, .benefit-grid { grid-template-columns: 1fr; }
+  .partner-card { min-height: 0; padding: 24px; }
+  .benefit-grid { gap: 0; }
+  .benefit { padding-right: 0; }
+  .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .process-step:nth-child(3) { border-left: 1px solid rgba(255,255,255,.2); }
+  .process-step { min-height: 190px; }
+  .domain-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:480px) {
+  .opportunity-list, .outcome-list, .suitability-list { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .process-step, .process-step:nth-child(3) { min-height: 0; padding: 22px 18px; border-left: 1px solid rgba(255,255,255,.2); }
+  .step-index { margin-bottom: 18px; }
+  .domain-card { min-height: 130px; padding: 14px; }
+  .partnership-cta .hero-actions { align-items: stretch; flex-direction: column; }
+}
+@media(prefers-reduced-motion:reduce) { .partner-card, .domain-card { transition: none; } }
