@@ -1045,7 +1045,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.4fr repeat(4, minmax(0, 1fr));
+      grid-template-columns: 1.5fr repeat(4, minmax(0, 1fr));
       gap: 24px;
       padding-bottom: 32px;
       border-bottom: 1px solid rgba(255, 255, 255, .12);
@@ -1055,12 +1055,13 @@
     .footer-brand-block {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
       align-items: flex-start;
     }
 
     .footer-brand-wrap {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
       gap: 13px;
@@ -1073,6 +1074,7 @@
       object-fit: contain;
       background: white;
       box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+      flex-shrink: 0;
     }
 
     .footer-brand-wrap strong {
@@ -1200,8 +1202,14 @@
     }
 
     .footer-motto {
+      display: block;
+      width: 100%;
+      flex-basis: 100%;
       color: var(--saffron-pale);
-      font: 600 .95rem var(--sanskrit);
+      font: 600 0.92rem/1.4 var(--sanskrit);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
     }
 
     .footer-legal {
@@ -2191,10 +2199,9 @@
         <div class="footer-brand-wrap">
           <img src="image/logo.png" alt="TARVIKA logo">
           <span><strong>TARVIKA Research and Technology</strong><span>Research. Technology. Innovation.</span></span>
-          <span class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</span>
         </div>
-        <p class="footer-copy">Rooted in Bharat, built for what comes next. TARVIKA brings together research, learning,
-          mentorship and technology-led innovation for emerging futures.</p>
+        <div class="footer-motto" lang="sa">आ नो भद्राः क्रतवो यन्तु विश्वतः।</div>
+        <p class="footer-copy">Rooted in Bharat, built for what comes next. TARVIKA brings together research, learning, mentorship and technology-led innovation for emerging futures.</p>
       </div>
 
       <div class="footer-column">
